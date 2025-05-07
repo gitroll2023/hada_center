@@ -42,38 +42,35 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">💡 광주 청년들을 위한 문화공간대여 💡</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">광주 청년 문화공간</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               청년공간 &apos;하다&apos;는 광주 청년들의 소통과 성장을 위한 열린 공간입니다.
               다양한 프로그램과 편안한 공간에서 여러분의 꿈과 아이디어를 펼쳐보세요.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <div className="text-3xl mb-4 text-blue-500">🏠</div>
-              <h3 className="text-xl font-bold mb-2">하다 청년공간</h3>
-              <p className="text-gray-600 mb-4">
-                광주 청년들을 위한 &apos;하다&apos; 청년공간에서는 다양한 프로그램과 
-                커뮤니티 활동이 진행됩니다.
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <div className="bg-gray-50 p-5 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <div className="text-2xl md:text-3xl mb-3 md:mb-4 text-blue-500">🏠</div>
+              <h3 className="text-lg md:text-xl font-bold mb-2">하다 청년공간</h3>
+              <p className="text-sm md:text-base text-gray-600">
+                광주 청년들을 위한 다양한 프로그램과 커뮤니티 활동이 진행됩니다.
               </p>
             </div>
             
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <div className="text-3xl mb-4 text-blue-500">👥</div>
-              <h3 className="text-xl font-bold mb-2">청년 커뮤니티</h3>
-              <p className="text-gray-600">
-                다양한 분야의 청년들과 교류하고 네트워크를 형성할 수 있는 
-                커뮤니티 활동을 지원합니다.
+            <div className="bg-gray-50 p-5 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <div className="text-2xl md:text-3xl mb-3 md:mb-4 text-blue-500">👥</div>
+              <h3 className="text-lg md:text-xl font-bold mb-2">청년 커뮤니티</h3>
+              <p className="text-sm md:text-base text-gray-600">
+                다양한 분야의 청년들과 교류하고 네트워크를 형성할 수 있습니다.
               </p>
             </div>
             
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <div className="text-3xl mb-4 text-blue-500">🚀</div>
-              <h3 className="text-xl font-bold mb-2">성장 프로그램</h3>
-              <p className="text-gray-600">
-                청년들의 역량 강화와 성장을 위한 다양한 교육 및 
-                워크샵 프로그램을 운영합니다.
+            <div className="bg-gray-50 p-5 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <div className="text-2xl md:text-3xl mb-3 md:mb-4 text-blue-500">🚀</div>
+              <h3 className="text-lg md:text-xl font-bold mb-2">성장 프로그램</h3>
+              <p className="text-sm md:text-base text-gray-600">
+                청년들의 역량 강화와 성장을 위한 다양한 교육 프로그램을 운영합니다.
               </p>
             </div>
           </div>
@@ -83,10 +80,10 @@ export default function Home() {
       {/* 위치 섹션 */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">📍 찾아오시는 길</h2>
-            <p className="text-lg text-gray-600">
-              청년공간 &apos;하다&apos; (광주 도구 서석로85번길 8-3(2~3층))
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">찾아오시는 길</h2>
+            <p className="text-sm md:text-lg text-gray-600">
+              청년공간 &apos;하다&apos; (광주 도구 서석로85번길 8-3)
             </p>
           </div>
           
@@ -106,7 +103,7 @@ export default function Home() {
             <div className="mt-4 bg-blue-50 p-4 rounded-lg flex items-center">
               <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center text-white font-bold mr-3 flex-shrink-0">H</div>
               <div>
-                <p className="font-semibold text-blue-800">📍 정확한 위치: 광주 도구 서석로85번길 8-3(2~3층)</p>
+                <p className="font-semibold text-blue-800">📍 위치: 광주 도구 서석로85번길 8-3(2~3층)</p>
                 <p className="text-sm text-blue-600 mt-1">지도를 클릭하여 구글 지도에서 자세히 보고 길찾기를 이용하실 수 있습니다.</p>
               </div>
             </div>

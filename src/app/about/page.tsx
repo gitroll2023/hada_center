@@ -163,7 +163,7 @@ export default function AboutPage() {
             <div className="mt-4 bg-blue-50 p-4 rounded-lg flex items-center">
               <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center text-white font-bold mr-3 flex-shrink-0">H</div>
               <div>
-                <p className="font-semibold text-blue-800">📍 정확한 위치: 광주 도구 서석로85번길 8-3(2~3층)</p>
+                <p className="font-semibold text-blue-800">📍 위치: 광주 도구 서석로85번길 8-3(2~3층)</p>
                 <p className="text-sm text-blue-600 mt-1">지도를 클릭하여 구글 지도에서 자세히 보고 길찾기를 이용하실 수 있습니다.</p>
               </div>
             </div>
