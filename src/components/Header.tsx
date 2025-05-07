@@ -15,16 +15,14 @@ const Header = () => {
     <header className="bg-gradient-to-r from-blue-50 to-white shadow-lg fixed w-full z-50">
       <div className="container mx-auto px-6 py-6 flex justify-between items-center">
         <div className="flex items-center">
-          <Link href="/" className="flex items-center group">
-            <div className="overflow-hidden transition-all duration-300 transform group-hover:scale-110">
-              <Image
-                src="/logo.png"
-                alt="하다 청년공간 로고"
-                width={120}
-                height={120}
-                className="transition-all duration-500 animate-pulse"
-              />
-            </div>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo.png"
+              alt="하다 청년공간 로고"
+              width={120}
+              height={120}
+              priority
+            />
           </Link>
         </div>
 
