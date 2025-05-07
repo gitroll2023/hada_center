@@ -12,17 +12,19 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-gradient-to-r from-blue-50 to-white shadow-lg fixed w-full z-50">
-      <div className="container mx-auto px-6 py-6 flex justify-between items-center">
+    <header className="bg-gradient-to-r from-blue-50 to-white shadow-lg fixed w-full z-50 h-[100px]">
+      <div className="container mx-auto px-6 py-3 flex justify-between items-center h-full">
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
-            <Image
-              src="/logo.png"
-              alt="하다 청년공간 로고"
-              width={120}
-              height={120}
-              priority
-            />
+            <div className="w-[120px] h-[80px] relative">
+              <Image
+                src="/logo.png"
+                alt="하다 청년공간 로고"
+                fill
+                style={{ objectFit: 'contain' }}
+                priority
+              />
+            </div>
           </Link>
         </div>
 

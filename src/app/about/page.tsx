@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen mt-[100px]">
       {/* 히어로 섹션 */}
       <section className="relative py-20 bg-gray-100">
         <div className="absolute inset-0 z-0">
