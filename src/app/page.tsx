@@ -19,8 +19,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-60 z-10"></div>
         <div className="container mx-auto px-4 relative z-20 text-center text-white">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">광주광역시 하다 청년공간</h1>
-          <p className="text-xl md:text-2xl mb-6">&apos;모이면 통하는 청년들과 함께 &quot;하다&quot;&apos;</p>
-          <p className="text-lg md:text-xl mb-8">&apos;소통&quot;하다&quot; 성장 &quot;하다&quot;&apos;</p>
+          <p className="text-xl md:text-2xl mb-6">모이면 통하는 청년들과 함께 하다</p>
+          <p className="text-lg md:text-xl mb-8">소통하다, 성장하다, 꿈꾸다</p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             <Link 
               href="/about" 

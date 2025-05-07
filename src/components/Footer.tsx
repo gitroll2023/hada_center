@@ -10,8 +10,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4">하다 청년공간</h3>
-            <p className="mb-2">모이면 통하는 청년들과 함께 &quot;하다&quot;</p>
-            <p>소통&quot;하다&quot;, 성장&quot;하다&quot;, 꿈꾸&quot;다&quot;</p>
+            <p className="mb-2">모이면 통하는 청년들과 함께 하다</p>
+            <p>소통하다, 성장하다, 꿈꾸다</p>
           </div>
           
           <div>
