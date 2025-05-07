@@ -83,7 +83,7 @@ export default function Home() {
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">찾아오시는 길</h2>
             <p className="text-sm md:text-lg text-gray-600">
-              청년공간 &apos;하다&apos; (광주 도구 서석로85번길 8-3)
+              청년공간 &apos;하다&apos; (광주 동구 서석로85번길 8-3)
             </p>
           </div>
           
@@ -103,7 +103,7 @@ export default function Home() {
             <div className="mt-4 bg-blue-50 p-4 rounded-lg flex items-center">
               <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center text-white font-bold mr-3 flex-shrink-0">H</div>
               <div>
-                <p className="font-semibold text-blue-800">📍 위치: 광주 도구 서석로85번길 8-3(2~3층)</p>
+                <p className="font-semibold text-blue-800">📍 위치: 광주 동구 서석로85번길 8-3(2~3층)</p>
                 <p className="text-sm text-blue-600 mt-1">지도를 클릭하여 구글 지도에서 자세히 보고 길찾기를 이용하실 수 있습니다.</p>
               </div>
             </div>

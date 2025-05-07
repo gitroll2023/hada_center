@@ -43,7 +43,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">연락처</h3>
             <p className="mb-2">
-              <span className="font-semibold">주소:</span> 광주 도구 서석로85번길 8-3(2~3층)
+              <span className="font-semibold">주소:</span> 광주 동구 서석로85번길 8-3(2~3층)
             </p>
             <p className="mb-2">
               <span className="font-semibold">이메일:</span> hada@gwangju.kr
