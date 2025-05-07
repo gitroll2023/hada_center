@@ -16,7 +16,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl font-bold mb-6">공간 소개</h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            청년공간 '하다'는 광주 청년들의 소통과 성장을 위한 열린 공간입니다.
+            청년공간 &apos;하다&apos;는 광주 청년들의 소통과 성장을 위한 열린 공간입니다.
           </p>
         </div>
       </section>
@@ -38,11 +38,11 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold mb-4">하다 청년공간</h2>
               <p className="text-gray-600 mb-4">
                 광주광역시 하다 청년공간은 청년들이 자유롭게 모여 소통하고 성장할 수 있는 
-                열린 공간입니다. '하다'라는 이름에는 청년들이 함께 모여 다양한 활동을 
-                '하다'라는 의미가 담겨 있습니다.
+                열린 공간입니다. &apos;하다&apos;라는 이름에는 청년들이 함께 모여 다양한 활동을 
+                &apos;하다&apos;라는 의미가 담겨 있습니다.
               </p>
               <p className="text-gray-600 mb-4">
-                소통"하다", 성장"하다", 꿈꾸"다", 도전"하다" - 청년들의 다양한 활동과 
+                소통&quot;하다&quot;, 성장&quot;하다&quot;, 꿈꾸&quot;다&quot;, 도전&quot;하다&quot; - 청년들의 다양한 활동과 
                 가능성을 지원하는 공간으로 운영되고 있습니다.
               </p>
               <p className="text-gray-600">

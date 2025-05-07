@@ -19,8 +19,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-60 z-10"></div>
         <div className="container mx-auto px-4 relative z-20 text-center text-white">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">광주광역시 하다 청년공간</h1>
-          <p className="text-xl md:text-2xl mb-6">모이면 통하는 청년들과 함께 "하다"</p>
-          <p className="text-lg md:text-xl mb-8">소통"하다" 성장 "하다"</p>
+          <p className="text-xl md:text-2xl mb-6">&apos;모이면 통하는 청년들과 함께 &quot;하다&quot;&apos;</p>
+          <p className="text-lg md:text-xl mb-8">&apos;소통&quot;하다&quot; 성장 &quot;하다&quot;&apos;</p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             <Link 
               href="/about" 
@@ -44,7 +44,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">💡 광주 청년들을 위한 문화공간대여 💡</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              청년공간 '하다'는 광주 청년들의 소통과 성장을 위한 열린 공간입니다.
+              청년공간 &apos;하다&apos;는 광주 청년들의 소통과 성장을 위한 열린 공간입니다.
               다양한 프로그램과 편안한 공간에서 여러분의 꿈과 아이디어를 펼쳐보세요.
             </p>
           </div>
@@ -52,10 +52,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <div className="text-3xl mb-4 text-blue-500">🏠</div>
-              <h3 className="text-xl font-bold mb-2">편안한 공간</h3>
-              <p className="text-gray-600">
-                누구나 편안하게 이용할 수 있는 열린 공간을 제공합니다.
-                휴식, 학습, 모임 등 다양한 목적으로 활용해보세요.
+              <h3 className="text-xl font-bold mb-2">하다 청년공간</h3>
+              <p className="text-gray-600 mb-4">
+                광주 청년들을 위한 &apos;하다&apos; 청년공간에서는 다양한 프로그램과 
+                커뮤니티 활동이 진행됩니다.
               </p>
             </div>
             
@@ -86,7 +86,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">📍 찾아오시는 길</h2>
             <p className="text-lg text-gray-600">
-              청년공간 '하다' (광주 도구 서석로85번길 8-3(2~3층))
+              청년공간 &apos;하다&apos; (광주 도구 서석로85번길 8-3(2~3층))
             </p>
           </div>
           

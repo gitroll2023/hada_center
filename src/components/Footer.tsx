@@ -1,41 +1,17 @@
 "use client";
 
+import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-8">
+    <footer className="bg-gray-800 text-white py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4">하다 청년공간</h3>
-            <p className="mb-2">모이면 통하는 청년들과 함께 "하다"</p>
-            <p className="mb-2">소통"하다" 성장 "하다"</p>
-            <div className="flex items-center mt-4">
-              <Link 
-                href="https://www.instagram.com/hada_in_gwangju?igsh=MW9iZXV5aDdxdWZhag%3D%3D&utm_source=qr" 
-                target="_blank"
-                className="mr-4 hover:text-blue-400 transition-colors"
-              >
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  width="24" 
-                  height="24" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  className="inline-block"
-                >
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-              </Link>
-            </div>
+            <p className="mb-2">모이면 통하는 청년들과 함께 &quot;하다&quot;</p>
+            <p>소통&quot;하다&quot;, 성장&quot;하다&quot;, 꿈꾸&quot;다&quot;</p>
           </div>
           
           <div>
