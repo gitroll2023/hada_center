@@ -69,9 +69,6 @@ const Header = () => {
             <Link href="/rental" className="px-4 py-2 rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all font-medium">
               공간대여
             </Link>
-            <Link href="/community" className="px-4 py-2 rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all font-medium">
-              커뮤니티
-            </Link>
           </div>
           <div className="ml-6 pl-6 border-l border-gray-200">
             <Link 
@@ -99,68 +96,95 @@ const Header = () => {
             </Link>
           </div>
         </nav>
-      </div>
 
-      {/* 모바일 메뉴 */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-white py-4 shadow-inner">
-          <div className="container mx-auto px-6 flex flex-col space-y-4">
-            <Link 
-              href="/about" 
-              className="flex items-center text-gray-700 hover:text-blue-600 transition-colors py-2 border-b border-gray-100"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-              </svg>
-              공간소개
-            </Link>
-            <Link 
-              href="/programs" 
-              className="flex items-center text-gray-700 hover:text-blue-600 transition-colors py-2 border-b border-gray-100"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-              </svg>
-              프로그램
-            </Link>
-            <Link 
-              href="/rental" 
-              className="flex items-center text-gray-700 hover:text-blue-600 transition-colors py-2 border-b border-gray-100"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              공간대여
-            </Link>
-            <Link 
-              href="/community" 
-              className="flex items-center text-gray-700 hover:text-blue-600 transition-colors py-2 border-b border-gray-100"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
-              커뮤니티
-            </Link>
-            <Link 
-              href="https://www.instagram.com/hada_in_gwangju?igsh=MW9iZXV5aDdxdWZhag%3D%3D&utm_source=qr" 
-              target="_blank" 
-              className="flex items-center text-gray-700 hover:text-pink-500 transition-colors py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-              </svg>
-              인스타그램
-            </Link>
+        {/* 모바일 메뉴 */}
+        <div
+          className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${
+            isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          }`}
+          onClick={toggleMenu}
+        ></div>
+
+        <div
+          className={`fixed top-0 right-0 w-64 h-full bg-white z-50 shadow-xl transform transition-transform duration-300 ${
+            isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        >
+          <div className="p-6">
+            <div className="flex justify-between items-center mb-8">
+              <h3 className="text-xl font-bold text-gray-800">메뉴</h3>
+              <button
+                className="text-gray-600 focus:outline-none"
+                onClick={toggleMenu}
+              >
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div className="flex flex-col space-y-4">
+              <Link
+                href="/about"
+                className="py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                onClick={toggleMenu}
+              >
+                공간소개
+              </Link>
+              <Link
+                href="/programs"
+                className="py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                onClick={toggleMenu}
+              >
+                프로그램
+              </Link>
+              <Link
+                href="/rental"
+                className="py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                onClick={toggleMenu}
+              >
+                공간대여
+              </Link>
+              <div className="pt-4 mt-4 border-t border-gray-200">
+                <Link
+                  href="https://www.instagram.com/hada_in_gwangju?igsh=MW9iZXV5aDdxdWZhag%3D%3D&utm_source=qr"
+                  target="_blank"
+                  className="flex items-center py-2 text-gray-700 hover:text-pink-500 transition-colors"
+                  onClick={toggleMenu}
+                >
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="20" 
+                    height="20" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    className="mr-2"
+                  >
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                  <span>Instagram</span>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 };
