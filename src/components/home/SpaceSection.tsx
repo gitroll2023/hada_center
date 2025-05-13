@@ -13,7 +13,7 @@ const SpaceSection = () => {
   const spaces = [
     {
       id: 1,
-      title: "2층 공유 공간",
+      title: "2층",
       description: "다양한 행사와 모임이 이루어지는 열린 공간입니다. 청년들의 아이디어가 현실이 되는 곳입니다.",
       image: "/images/space/2F.png",
       color: "from-blue-400 to-blue-600",
@@ -21,19 +21,11 @@ const SpaceSection = () => {
     },
     {
       id: 2,
-      title: "3층 커뮤니티 공간",
+      title: "3층",
       description: "소규모 모임과 네트워킹이 이루어지는 아늑한 공간입니다. 다양한 청년들과 교류할 수 있습니다.",
       image: "/images/space/2F.png", // 이미지 경로는 실제 3층 이미지로 변경 필요
       color: "from-purple-400 to-purple-600",
       icon: "👥"
-    },
-    {
-      id: 3,
-      title: "스터디룸",
-      description: "집중적인 학습과 회의를 위한 조용한 공간입니다. 청년들의 성장을 지원합니다.",
-      image: "/images/space/2F.png", // 이미지 경로는 실제 스터디룸 이미지로 변경 필요
-      color: "from-green-400 to-green-600",
-      icon: "📚"
     }
   ];
 
