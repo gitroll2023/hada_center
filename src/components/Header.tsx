@@ -63,6 +63,9 @@ const Header = () => {
             <Link href="/about" className="px-4 py-2 rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all font-medium">
               공간소개
             </Link>
+            <Link href="/events" className="px-4 py-2 rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all font-medium">
+              문화행사
+            </Link>
             <Link href="/programs" className="px-4 py-2 rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all font-medium">
               프로그램
             </Link>
@@ -140,6 +143,13 @@ const Header = () => {
                 onClick={toggleMenu}
               >
                 공간소개
+              </Link>
+              <Link
+                href="/events"
+                className="py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                onClick={toggleMenu}
+              >
+                문화행사
               </Link>
               <Link
                 href="/programs"
