@@ -38,7 +38,7 @@ const EventsSection = () => {
       id: 4,
       title: "폭싹속았수다 체험형 전시회",
       date: "2024.10.15",
-      description: "청년들이 직접 기획한 체험형 전시회",
+      description: "추억속으로 떠나는 체험형  전시회",
       image: "/images/history/250309 연애해봄 문화공연/1.jpg", // 실제 이미지로 변경 필요
       color: "bg-green-500"
     }

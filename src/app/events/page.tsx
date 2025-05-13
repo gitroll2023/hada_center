@@ -85,9 +85,9 @@ const events: Event[] = [
   },
   {
     id: 6,
-    title: "폭싹속았수다 체험형 전시회",
+    title: "폭싹 체험형 전시회",
     date: "2025.04.11",
-    description: "눈을 속이는 재미있는 체험형 전시회! 착시와 트릭아트를 통해 새로운 경험을 해보세요.",
+    description: "추억속으로 떠나는 체험형  전시회",
     images: [
       "/images/history/250411 폭싹속았수다 체험형 전시회/1.jpg",
       "/images/history/250411 폭싹속았수다 체험형 전시회/2.jpg",
