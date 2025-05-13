@@ -321,8 +321,8 @@ export default function Home() {
               {/* CM송 설명 */}
               <div className="mt-4 p-3 bg-indigo-700/50 rounded-lg text-blue-100 text-sm">
                 <p>
-                  <span className="font-semibold text-white">"하다! 하자!"</span>는 청년들의 꿈과 열정이 모이는 공간을 표현한 CM송입니다. 
-                  "하고 싶은 게 너무 많을 땐 혼자 말고 같이 와봐"라는 가사처럼 함께 성장하는 청년공간의 의미를 담았습니다.
+                  <span className="font-semibold text-white">&ldquo;하다! 하자!&rdquo;</span>는 청년들의 꿈과 열정이 모이는 공간을 표현한 CM송입니다. 
+                  &ldquo;하고 싶은 게 너무 많을 땐 혼자 말고 같이 와봐&rdquo;라는 가사처럼 함께 성장하는 청년공간의 의미를 담았습니다.
                 </p>
               </div>
             </div>

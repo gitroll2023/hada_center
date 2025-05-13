@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import { useMusicPlayer } from "@/context/MusicPlayerContext";
 
-interface FloatingMusicPlayerProps {
-}
+// 빈 props 타입을 Record<string, never>로 대체
+type FloatingMusicPlayerProps = Record<string, never>;
 
 const FloatingMusicPlayer = ({}: FloatingMusicPlayerProps) => {
   const { songTitle, songDuration, isPlaying, togglePlay, audioElement } = useMusicPlayer();

@@ -252,18 +252,8 @@ export default function EventsPage() {
                   margin: '-1.5rem',
                 }}
                 initial={{ x: 0, y: 0 }}
-                animate={{
-                  x: Math.cos(index * (Math.PI / 3)) * 120,
-                  y: Math.sin(index * (Math.PI / 3)) * 120,
-                  rotate: [0, 360],
-                  scale: [1, 1.1, 1]
-                }}
-                transition={{
-                  duration: 3,
-                  rotate: { duration: 3, repeat: Infinity, ease: "linear" },
-                  scale: { duration: 1.5, repeat: Infinity, repeatType: "reverse" },
-                  delay: index * 0.2
-                }}
+                animate={{ x: Math.cos(index * (Math.PI / 3)) * 120, y: Math.sin(index * (Math.PI / 3)) * 120, rotate: [0, 360] }}
+                transition={{ duration: 3, rotate: { duration: 3, repeat: Infinity, ease: "linear" }, delay: index * 0.2 }}
               >
                 {emoji}
               </motion.div>
@@ -668,7 +658,7 @@ export default function EventsPage() {
                 2
               </div>
               <h3 className="text-xl font-bold mb-4">신청하기</h3>
-              <p className="text-gray-600">행사 페이지에서 '신청하기' 버튼을 클릭하고 간단한 정보를 입력하세요.</p>
+              <p className="text-gray-600">행사 페이지에서 &apos;신청하기&apos; 버튼을 클릭하고 간단한 정보를 입력하세요.</p>
             </motion.div>
 
             <motion.div
