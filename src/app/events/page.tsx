@@ -308,11 +308,7 @@ export default function EventsPage() {
                   className="w-3 h-3 bg-white rounded-full"
                   initial={{ opacity: 0.5, y: 0 }}
                   animate={{ opacity: [0.5, 1, 0.5], y: [0, -5, 0] }}
-                  transition={{
-                    duration: 0.6,
-                    repeat: Infinity,
-                    delay: dot * 0.2
-                  }}
+                  transition={{ duration: 0.6, repeat: Infinity, delay: dot * 0.2 }}
                 />
               ))}
             </motion.div>
@@ -412,7 +408,7 @@ export default function EventsPage() {
         {/* 콘텐츠 */}
         <div className="container mx-auto px-4 relative z-10 pt-64 sm:pt-56 md:pt-36">
           <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 text-white mb-10 md:mb-0">
+            <div className="md:w-1/2 text-white mb-10 md:mb-0 ml-4 md:ml-8 lg:ml-12">
               <motion.div
                 initial={{ opacity: 0, x: -100 }}
                 animate={{ opacity: 1, x: 0 }}

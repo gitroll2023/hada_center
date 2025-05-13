@@ -54,7 +54,7 @@ const FloatingMusicPlayer = ({ isVisible }: FloatingMusicPlayerProps) => {
 
   // 원형 프로그레스 바 SVG 경로 계산
   const calculateCirclePath = () => {
-    const radius = 16; // 원의 반지름 (더 작게 조정)
+    const radius = 16; // 원의 반지름
     const circumference = 2 * Math.PI * radius;
     const progress = calculateProgress();
     const dashoffset = circumference * (1 - progress / 100);
@@ -80,14 +80,21 @@ const FloatingMusicPlayer = ({ isVisible }: FloatingMusicPlayerProps) => {
           {/* 원형 프로그레스 바 */}
           <div className="absolute">
             <svg width="42" height="42" viewBox="0 0 42 42" className="sm:w-[42px] sm:h-[42px] w-[48px] h-[48px]">
+              {/* 그라디언트 정의 */}
+              <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#4f46e5" />
+                  <stop offset="100%" stopColor="#ec4899" />
+                </linearGradient>
+              </defs>
               {/* 배경 원 */}
               <circle 
                 cx="21" 
                 cy="21" 
                 r="16" 
                 fill="none" 
-                stroke="#e2e8f0" 
-                strokeWidth="2"
+                stroke="#e5e7eb" 
+                strokeWidth="5"
               />
               {/* 프로그레스 원 */}
               <circle 
@@ -96,19 +103,12 @@ const FloatingMusicPlayer = ({ isVisible }: FloatingMusicPlayerProps) => {
                 r="16" 
                 fill="none" 
                 stroke="url(#gradient)" 
-                strokeWidth="2" 
+                strokeWidth="5" 
                 strokeLinecap="round"
                 strokeDasharray={circumference}
                 strokeDashoffset={dashoffset}
                 transform="rotate(-90 21 21)"
               />
-              {/* 그라데이션 정의 */}
-              <defs>
-                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#3b82f6" />
-                  <stop offset="100%" stopColor="#8b5cf6" />
-                </linearGradient>
-              </defs>
             </svg>
           </div>
           

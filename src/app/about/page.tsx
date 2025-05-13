@@ -155,7 +155,7 @@ export default function AboutPage() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-10">
             {/* 왼쪽 텍스트 영역 */}
             <motion.div 
-              className="w-full md:w-1/2 text-white"
+              className="w-full md:w-1/2 text-white ml-4 md:ml-8 lg:ml-12"
               initial={{ opacity: 0, x: -50 }}
               animate={!isLoading ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
               transition={{ duration: 0.8, delay: 0.3 }}

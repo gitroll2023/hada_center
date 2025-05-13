@@ -162,8 +162,8 @@ export default function RentalPage() {
         
         {/* 콘텐츠 */}
         <div className="container mx-auto px-4 z-10 relative">
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="w-full md:w-3/5 mb-10 md:mb-0">
+          <div className="flex flex-col md:flex-row items-center justify-center">
+            <div className="w-full md:w-3/5 mb-10 md:mb-0 text-center md:text-left md:pl-8 lg:pl-12">
               <h1 className="text-5xl md:text-7xl font-extrabold mb-6 text-white leading-tight">
                 당신의 <span className="text-teal-300">아이디어</span>가<br />
                 <span className="relative inline-block">
@@ -177,7 +177,7 @@ export default function RentalPage() {
                 프로젝트를 위한 최적의 공간을 만나보세요.
               </p>
               
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                 <a href="#spaces" className="bg-white text-teal-700 hover:bg-teal-50 transition-colors py-3 px-8 rounded-full font-semibold shadow-lg hover:shadow-xl">
                   공간 둘러보기
                 </a>

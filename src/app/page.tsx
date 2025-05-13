@@ -177,7 +177,7 @@ export default function Home() {
               <div className="relative z-10">
                 <div className="flex flex-col items-center justify-between bg-indigo-800/60 backdrop-blur-md rounded-xl p-4 sm:p-5 shadow-md border border-indigo-400/30">
                   <div className="flex items-center w-full mb-4">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white text-xl mr-3 sm:mr-4 shadow-md animate-pulse">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-blue-300 to-purple-400 rounded-full flex items-center justify-center text-white text-xl mr-3 sm:mr-4 shadow-md animate-pulse">
                       🎵
                     </div>
                     <div>
@@ -432,9 +432,8 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-purple-200">광주 청년 문화공간</h2>
-            <p className="text-lg text-white md:text-gray-200 max-w-3xl mx-auto leading-relaxed">
-              청년공간 하다는 광주 청년들의 소통과 성장을 위한 열린 공간입니다.
-              다양한 프로그램과 편안한 공간에서 여러분의 꿈과 아이디어를 펼쳐보세요.
+            <p className="text-lg text-white md:text-gray-200 max-w-3xl mx-auto leading-relaxed" style={{ whiteSpace: 'pre-line' }}>
+              {"청년공간 하다는 광주 청년들의\n소통과 성장을 위한 열린 공간입니다. 다양한 프로그램과 편안한 공간에서 여러분의 꿈과 아이디어를 펼쳐보세요."}
             </p>
           </div>
 
@@ -473,8 +472,8 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">청년공간 하다</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              청년공간 하다는 광주 청년들의 소통과 성장을 위한 열린 공간입니다.
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto" style={{ whiteSpace: 'pre-line' }}>
+              {"청년공간 하다는 광주 청년들의\n소통과 성장을 위한 열린 공간입니다."}
             </p>
           </div>
 
@@ -531,70 +530,70 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* 할로윈 파티 */}
+            {/* 폭싹속았수다 체험형 전시회 */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-all">
               <div className="relative h-56">
                 <Image
-                  src="/images/history/241029 할로윈파티/2.jpg"
-                  alt="할로윈 파티"
+                  src="/images/history/250411 폭싹속았수다 체험형 전시회/3.jpg"
+                  alt="폭싹속았수다 체험형 전시회"
                   fill
                   className="object-cover transition-transform group-hover:scale-105 duration-500"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   style={{ objectPosition: 'center' }}
                   unoptimized={false}
                 />
-                <div className="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">2024.10.29</div>
+                <div className="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">2025.04.11</div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-3 text-blue-700">할로윈 파티</h3>
-                <p className="text-gray-600 mb-4">청년들과 함께한 할로윈 파티</p>
-                <Link href="#" className="inline-block text-blue-600 font-medium hover:text-blue-800 transition-colors">
+                <h3 className="text-xl font-bold mb-3 text-green-700">폭싹속았수다 체험형 전시회</h3>
+                <p className="text-gray-600 mb-4">청년들을 위한 체험형 전시회</p>
+                <Link href="/programs" className="inline-block text-green-600 font-medium hover:text-green-800 transition-colors">
                   자세히 보기 →
                 </Link>
               </div>
             </div>
 
-            {/* 피터팬 뮤직콘서트 */}
+            {/* 연애해봄 문화공연 */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-all">
               <div className="relative h-56">
                 <Image
-                  src="/images/history/241122 피터팬 뮤직콘서트/1.jpg"
-                  alt="피터팬 뮤직콘서트"
+                  src="/images/history/250309 연애해봄 문화공연/1.jpg"
+                  alt="연애해봄 문화공연"
                   fill
                   className="object-cover transition-transform group-hover:scale-105 duration-500"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   style={{ objectPosition: 'center' }}
                   unoptimized={false}
                 />
-                <div className="absolute top-4 left-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">2024.11.22</div>
+                <div className="absolute top-4 left-4 bg-pink-600 text-white text-xs font-bold px-3 py-1 rounded-full">2025.03.09</div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-3 text-purple-700">피터팬 뮤직콘서트</h3>
-                <p className="text-gray-600 mb-4">청년 음악가들의 공연</p>
-                <Link href="#" className="inline-block text-purple-600 font-medium hover:text-purple-800 transition-colors">
+                <h3 className="text-xl font-bold mb-3 text-pink-700">연애해봄 문화공연</h3>
+                <p className="text-gray-600 mb-4">봄을 맞이한 청년 문화공연</p>
+                <Link href="/programs" className="inline-block text-pink-600 font-medium hover:text-pink-800 transition-colors">
                   자세히 보기 →
                 </Link>
               </div>
             </div>
 
-            {/* Lastpage 칵테일파티 */}
+            {/* Firstpage 북코칭 */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-all">
               <div className="relative h-56">
                 <Image
-                  src="/images/history/241129 Lastpage 칵테일파티/4.jpg"
-                  alt="Lastpage 칵테일파티"
+                  src="/images/history/250204 Firstpage 북코칭/blur2.png"
+                  alt="Firstpage 북코칭"
                   fill
                   className="object-cover transition-transform group-hover:scale-105 duration-500"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   style={{ objectPosition: 'center' }}
                   unoptimized={false}
                 />
-                <div className="absolute top-4 left-4 bg-pink-600 text-white text-xs font-bold px-3 py-1 rounded-full">2024.11.29</div>
+                <div className="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">2025.02.04</div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-3 text-pink-700">Lastpage 칵테일파티</h3>
-                <p className="text-gray-600 mb-4">연말 네트워킹 파티</p>
-                <Link href="#" className="inline-block text-pink-600 font-medium hover:text-pink-800 transition-colors">
+                <h3 className="text-xl font-bold mb-3 text-blue-700">Firstpage 북코칭</h3>
+                <p className="text-gray-600 mb-4">청년들을 위한 독서 코칭 프로그램</p>
+                <Link href="/programs" className="inline-block text-blue-600 font-medium hover:text-blue-800 transition-colors">
                   자세히 보기 →
                 </Link>
               </div>
@@ -624,25 +623,25 @@ export default function Home() {
 
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden max-w-4xl mx-auto">
             <div className="p-6 border-b">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                 <h3 className="text-xl font-bold text-blue-700">5월 청년 네트워킹 행사 안내</h3>
-                <span className="text-sm text-gray-500">2025.05.10</span>
+                <span className="text-sm text-gray-500 mt-1 sm:mt-0">2025.05.10</span>
               </div>
               <p className="mt-3 text-gray-600">5월 청년 네트워킹 행사가 5월 25일에 개최됩니다. 많은 참여 바랍니다.</p>
             </div>
             
             <div className="p-6 border-b">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                 <h3 className="text-xl font-bold text-blue-700">청년공간 하다 운영시간 변경 안내</h3>
-                <span className="text-sm text-gray-500">2025.05.05</span>
+                <span className="text-sm text-gray-500 mt-1 sm:mt-0">2025.05.05</span>
               </div>
               <p className="mt-3 text-gray-600">5월부터 청년공간 하다의 운영시간이 변경됩니다. 자세한 내용을 확인해주세요.</p>
             </div>
             
             <div className="p-6">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                 <h3 className="text-xl font-bold text-blue-700">청년 동아리 모집 안내</h3>
-                <span className="text-sm text-gray-500">2025.04.28</span>
+                <span className="text-sm text-gray-500 mt-1 sm:mt-0">2025.04.28</span>
               </div>
               <p className="text-gray-600 mb-4">2025년 청년 동아리를 모집합니다. 관심 있는 청년들의 많은 지원 바랍니다.</p>
             </div>
