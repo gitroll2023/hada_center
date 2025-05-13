@@ -341,7 +341,7 @@ export default function AboutPage() {
                   textShadow: '1px 1px 2px rgba(106, 130, 251, 0.5)',
                   padding: '0 4px',
                   borderBottom: '2px solid #6a82fb'
-                }}>하다</span>
+                }}>&lsquo;하다&rsquo;</span>
               </motion.h2>
               <motion.p 
                 className="text-gray-700 mb-5 leading-relaxed"
@@ -350,7 +350,7 @@ export default function AboutPage() {
                 transition={{ duration: 0.5, delay: 2.0 }}
               >
                 광주광역시 하다 청년공간은 청년들이 자유롭게 모여 소통하고 성장할 수 있는 
-                열린 공간입니다. <span className="text-blue-600 font-bold" style={{ fontFamily: 'Paperlogy-8ExtraBold', fontWeight: 900 }}>'하다'</span>라는 이름에는 청년들이 함께 모여 다양한 활동을 
+                열린 공간입니다. <span className="text-blue-600 font-bold" style={{ fontFamily: 'Paperlogy-8ExtraBold', fontWeight: 900 }}>&lsquo;하다&rsquo;</span>라는 이름에는 청년들이 함께 모여 다양한 활동을 
                 하다라는 의미가 담겨 있습니다.
               </motion.p>
               
@@ -398,7 +398,7 @@ export default function AboutPage() {
                   textShadow: '1px 1px 2px rgba(106, 130, 251, 0.5)',
                   padding: '0 4px',
                   borderBottom: '2px solid #6a82fb'
-                }}>하다</span> 청년공간에서 여러분의 꿈을 펼쳐보세요.
+                }}>&lsquo;하다&rsquo;</span> 청년공간에서 여러분의 꿈을 펼쳐보세요.
               </motion.p>
             </motion.div>
           </div>
