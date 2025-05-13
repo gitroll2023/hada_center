@@ -40,10 +40,10 @@ export default function CommunityPage() {
     },
     {
       id: 5,
-      name: '광주 청년 사진 동아리',
+      name: '광주 청년 사진 동호회',
       members: 18,
       category: '문화/예술',
-      description: '사진 촬영과 작품 공유를 통해 사진 예술을 즐기는 동아리입니다.',
+      description: '사진 촬영과 작품 공유를 통해 사진 예술을 즐기는 동호회입니다.',
       meetingDay: '매주 일요일',
       image: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80',
     },

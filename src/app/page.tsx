@@ -89,7 +89,7 @@ export default function Home() {
       <ImageProtection />
       
       {/* 청년 스냅샷 인트로 섹션 */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-blue-900 via-indigo-900 to-indigo-800">
+      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-blue-800 via-indigo-800 to-purple-800">
         {/* 배경 이미지 */}
         <div className="absolute inset-0 w-full h-full z-0 opacity-50">
           <div className="relative w-full h-full">
@@ -101,9 +101,9 @@ export default function Home() {
               priority
               unoptimized={false}
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-purple-900/50"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-800/50 to-purple-800/50"></div>
           </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/50 to-indigo-800/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-800/40 to-purple-800/70"></div>
         </div>
         
         {/* 콘텐츠 */}
@@ -149,7 +149,7 @@ export default function Home() {
       </section>
 
       {/* CM송 섹션 - "하다! 하자!" - 히어로 섹션 바로 아래로 이동 */}
-      <section className="py-16 bg-gradient-to-b from-indigo-800 via-indigo-700 to-indigo-600">
+      <section className="py-16 bg-gradient-to-b from-purple-800 via-indigo-700 to-blue-700">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">하다! 하자!</h2>
@@ -640,10 +640,10 @@ export default function Home() {
             
             <div className="p-6">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                <h3 className="text-xl font-bold text-blue-700">청년 동아리 모집 안내</h3>
+                <h3 className="text-xl font-bold text-blue-700">청년 동호회 모집 안내</h3>
                 <span className="text-sm text-gray-500 mt-1 sm:mt-0">2025.04.28</span>
               </div>
-              <p className="text-gray-600 mb-4">2025년 청년 동아리를 모집합니다. 관심 있는 청년들의 많은 지원 바랍니다.</p>
+              <p className="text-gray-600 mb-4">2025년 청년 동호회를 모집합니다. 관심 있는 청년들의 많은 지원 바랍니다.</p>
             </div>
           </div>
 
