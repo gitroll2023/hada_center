@@ -85,9 +85,9 @@ const events: Event[] = [
   },
   {
     id: 6,
-    title: "폭싹 체험형 전시회",
+    title: "폭싹 속았수다 체험형 전시회",
     date: "2025.04.11",
-    description: "추억속으로 떠나는 체험형  전시회",
+    description: "어린 시절 추억 속으로 떠나는 체험형 전시회! 향수를 자극하는 다양한 인터랙티브 전시물과 함께 잊고 있던 감성을 되살려보세요.",
     images: [
       "/images/history/250411 폭싹속았수다 체험형 전시회/1.jpg",
       "/images/history/250411 폭싹속았수다 체험형 전시회/2.jpg",
@@ -436,8 +436,8 @@ export default function EventsPage() {
                 transition={{ duration: 1, delay: 1 }}
                 className="text-base md:text-xl mb-8 max-w-lg"
               >
-                지루한 일상에서 벗어나 색다른 경험을 찾고 있나요?
-                하다 청년공간에서 펼쳐지는 다양한 문화행사에 참여하고
+                지루한 일상에서 벗어나 색다른 경험을 찾고 있나요?<br />
+                하다 청년공간에서 펼쳐지는 다양한 문화행사에 참여하고<br />
                 새로운 인연과 영감을 만나보세요.
               </motion.p>
               
@@ -466,19 +466,19 @@ export default function EventsPage() {
               <div className="relative w-full">
                 {/* 메인 이미지 */}
                 <motion.div
-                  className="relative z-20 rounded-lg overflow-hidden shadow-2xl transform rotate-3 w-full"
+                  className="relative z-20 rounded-lg overflow-hidden shadow-2xl transform rotate-3 w-[70%] ml-0 mr-auto"
                   whileHover={{ scale: 1.05, rotate: 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="relative w-full h-full">
+                  <div className="relative w-full h-[250px] md:h-[300px]">
                     <Image
                       src="/images/history/250309 연애해봄 문화공연/3.jpg"
                       alt="연애해봄 문화공연"
                       fill
-                      className="object-cover"
+                      className="object-cover object-left scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-pink-600/70 via-pink-600/40 to-pink-600/20" />
-                    <div className="absolute bottom-0 left-0 p-6">
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
                       <span className="bg-white text-pink-600 px-4 py-1 rounded-full text-sm font-bold">
                         2025.03.09
                       </span>
@@ -489,31 +489,58 @@ export default function EventsPage() {
                 
                 {/* 배경 이미지들 - 모바일에서는 숨김 */}
                 <motion.div
-                  className="absolute top-20 -left-10 z-10 rounded-lg overflow-hidden shadow-xl transform -rotate-6 opacity-70 hidden md:block"
+                  className="absolute -top-10 -right-10 z-10 rounded-lg overflow-hidden shadow-xl transform -rotate-6 opacity-80 hidden md:block"
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 5, repeat: Infinity }}
                 >
                   <Image
                     src="/images/history/241122 피터팬 뮤직콘서트/1.jpg"
                     alt="피터팬 뮤직콘서트"
-                    width={300}
-                    height={200}
+                    width={240}
+                    height={160}
                     className="object-cover"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/50 to-blue-600/20" />
+                  <div className="absolute bottom-0 left-0 p-4">
+                    <h3 className="text-white text-sm font-bold">피터팬 뮤직콘서트</h3>
+                  </div>
                 </motion.div>
                 
                 <motion.div
-                  className="absolute bottom-10 -right-5 z-10 rounded-lg overflow-hidden shadow-xl transform rotate-6 opacity-70 hidden md:block"
+                  className="absolute -bottom-20 right-20 z-10 rounded-lg overflow-hidden shadow-xl transform rotate-8 opacity-80 hidden md:block"
                   animate={{ y: [0, 10, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, delay: 1 }}
+                  transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
                 >
                   <Image
                     src="/images/history/241029 할로윈파티/2.jpg"
                     alt="할로윈 파티"
-                    width={280}
+                    width={220}
+                    height={140}
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-600/50 to-orange-600/20" />
+                  <div className="absolute bottom-0 left-0 p-4">
+                    <h3 className="text-white text-sm font-bold">할로윈 파티</h3>
+                  </div>
+                </motion.div>
+                
+                {/* 세 번째 배경 이미지 추가 - 모바일에서는 숨김 */}
+                <motion.div
+                  className="absolute top-[60%] -right-40 z-10 rounded-lg overflow-hidden shadow-xl transform -rotate-12 opacity-80 hidden md:block"
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 6, repeat: Infinity, delay: 1 }}
+                >
+                  <Image
+                    src="/images/history/250411 폭싹속았수다 체험형 전시회/3.jpg"
+                    alt="폭싹 체험형 전시회"
+                    width={260}
                     height={180}
                     className="object-cover"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-r from-yellow-600/50 to-yellow-600/20" />
+                  <div className="absolute bottom-0 left-0 p-4">
+                    <h3 className="text-white text-sm font-bold">폭싹 체험형 전시회</h3>
+                  </div>
                 </motion.div>
               </div>
             </motion.div>
@@ -555,8 +582,9 @@ export default function EventsPage() {
               🔥 핫한 문화행사 모음.zip 🔥
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              지루한 일상은 이제 그만! 하다 청년공간에서 펼쳐지는 <span className="font-bold text-pink-500">찐텐</span> 가득한 문화행사들을 만나보세요.
-              <br />
+              지루한 일상은 이제 그만!<br />
+              하다 청년공간에서 펼쳐지는 다양한 문화행사에 참여하고<br />
+              새로운 인연과 영감을 만나보세요.<br />
               <span className="inline-block mt-2 text-indigo-500 font-medium">우리만의 특별한 추억, 여기서 함께 만들어요!</span>
             </p>
           </motion.div>

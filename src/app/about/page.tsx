@@ -350,15 +350,7 @@ export default function AboutPage() {
                 transition={{ duration: 0.5, delay: 2.0 }}
               >
                 광주광역시 하다 청년공간은 청년들이 자유롭게 모여 소통하고 성장할 수 있는 
-                열린 공간입니다. <span style={{ 
-                  fontFamily: 'SBAggroB', 
-                  fontWeight: 900, 
-                  fontSize: '1.3em',
-                  color: '#3454d1',
-                  textShadow: '1px 1px 2px rgba(106, 130, 251, 0.5)',
-                  padding: '0 4px',
-                  borderBottom: '2px solid #6a82fb'
-                }}>하다</span>라는 이름에는 청년들이 함께 모여 다양한 활동을 
+                열린 공간입니다. <span className="text-blue-600 font-bold" style={{ fontFamily: 'Paperlogy-8ExtraBold', fontWeight: 900 }}>'하다'</span>라는 이름에는 청년들이 함께 모여 다양한 활동을 
                 하다라는 의미가 담겨 있습니다.
               </motion.p>
               
@@ -414,10 +406,10 @@ export default function AboutPage() {
       </section>
 
       {/* 공간 특징 섹션 */}
-      <section className="py-12 md:py-16 bg-gradient-to-r from-blue-50 to-purple-50">
+      <section className="py-8 md:py-16 bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="container mx-auto px-4">
           <motion.h2 
-            className="text-2xl md:text-3xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"
+            className="text-xl md:text-3xl font-bold mb-6 md:mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -426,43 +418,43 @@ export default function AboutPage() {
             하다 청년공간의 특징
           </motion.h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             <motion.div 
-              className="bg-white p-6 md:p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-white p-4 md:p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="flex flex-col md:flex-row gap-6 items-start">
-                <div className="w-full md:w-1/3 relative">
-                  <div className="absolute -top-2 -left-2 w-12 h-12 bg-yellow-100 rounded-full -z-10"></div>
+              <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-start">
+                <div className="w-1/4 md:w-1/3 relative">
+                  <div className="absolute -top-2 -left-2 w-6 h-6 sm:w-12 sm:h-12 bg-blue-100 rounded-full -z-10"></div>
                   <div className="aspect-square bg-blue-100 rounded-lg flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 sm:h-12 sm:w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                     </svg>
                   </div>
                 </div>
-                <div className="w-full md:w-2/3">
-                  <h3 className="text-xl font-bold mb-3 text-blue-600">다목적 공간</h3>
-                  <p className="text-gray-700 mb-4">
+                <div className="w-3/4 md:w-2/3">
+                  <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-blue-600">다목적 공간</h3>
+                  <p className="text-sm md:text-base text-gray-700 mb-3 md:mb-4">
                     다양한 활동과 모임을 위한 유연한 공간으로, 필요에 따라 재구성이 가능합니다.
                   </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-center text-gray-600">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <ul className="space-y-1 md:space-y-2">
+                    <li className="flex items-center text-xs md:text-sm text-gray-600">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 md:h-5 md:w-5 md:mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       소규모 모임 및 네트워킹
                     </li>
-                    <li className="flex items-center text-gray-600">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <li className="flex items-center text-xs md:text-sm text-gray-600">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 md:h-5 md:w-5 md:mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       스터디 및 프로젝트 작업
                     </li>
-                    <li className="flex items-center text-gray-600">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <li className="flex items-center text-xs md:text-sm text-gray-600">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 md:h-5 md:w-5 md:mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       문화 행사 및 워크숍
@@ -473,41 +465,41 @@ export default function AboutPage() {
             </motion.div>
             
             <motion.div 
-              className="bg-white p-6 md:p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-white p-4 md:p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <div className="flex flex-col md:flex-row gap-6 items-start">
-                <div className="w-full md:w-1/3 relative">
-                  <div className="absolute -top-2 -left-2 w-12 h-12 bg-green-100 rounded-full -z-10"></div>
+              <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-start">
+                <div className="w-1/4 md:w-1/3 relative">
+                  <div className="absolute -top-2 -left-2 w-6 h-6 sm:w-12 sm:h-12 bg-green-100 rounded-full -z-10"></div>
                   <div className="aspect-square bg-green-100 rounded-lg flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 sm:h-12 sm:w-12 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                     </svg>
                   </div>
                 </div>
-                <div className="w-full md:w-2/3">
-                  <h3 className="text-xl font-bold mb-3 text-green-600">학습 공간</h3>
-                  <p className="text-gray-700 mb-4">
+                <div className="w-3/4 md:w-2/3">
+                  <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-green-600">학습 공간</h3>
+                  <p className="text-sm md:text-base text-gray-700 mb-3 md:mb-4">
                     집중적인 학습과 연구를 위한 조용하고 쾌적한 환경을 제공합니다.
                   </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-center text-gray-600">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <ul className="space-y-1 md:space-y-2">
+                    <li className="flex items-center text-xs md:text-sm text-gray-600">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 md:h-5 md:w-5 md:mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       개인 학습 및 독서
                     </li>
-                    <li className="flex items-center text-gray-600">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <li className="flex items-center text-xs md:text-sm text-gray-600">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 md:h-5 md:w-5 md:mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       온라인 강의 참여
                     </li>
-                    <li className="flex items-center text-gray-600">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <li className="flex items-center text-xs md:text-sm text-gray-600">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 md:h-5 md:w-5 md:mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       자기계발 활동
@@ -518,41 +510,41 @@ export default function AboutPage() {
             </motion.div>
             
             <motion.div 
-              className="bg-white p-6 md:p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-white p-4 md:p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               viewport={{ once: true }}
             >
-              <div className="flex flex-col md:flex-row gap-6 items-start">
-                <div className="w-full md:w-1/3 relative">
-                  <div className="absolute -top-2 -left-2 w-12 h-12 bg-purple-100 rounded-full -z-10"></div>
+              <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-start">
+                <div className="w-1/4 md:w-1/3 relative">
+                  <div className="absolute -top-2 -left-2 w-6 h-6 sm:w-12 sm:h-12 bg-purple-100 rounded-full -z-10"></div>
                   <div className="aspect-square bg-purple-100 rounded-lg flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 sm:h-12 sm:w-12 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
                   </div>
                 </div>
-                <div className="w-full md:w-2/3">
-                  <h3 className="text-xl font-bold mb-3 text-purple-600">커뮤니티 공간</h3>
-                  <p className="text-gray-700 mb-4">
+                <div className="w-3/4 md:w-2/3">
+                  <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-purple-600">커뮤니티 공간</h3>
+                  <p className="text-sm md:text-base text-gray-700 mb-3 md:mb-4">
                     청년들 간의 소통과 교류를 촉진하는 편안하고 친근한 공간입니다.
                   </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-center text-gray-600">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <ul className="space-y-1 md:space-y-2">
+                    <li className="flex items-center text-xs md:text-sm text-gray-600">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 md:h-5 md:w-5 md:mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       네트워킹 및 교류
                     </li>
-                    <li className="flex items-center text-gray-600">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <li className="flex items-center text-xs md:text-sm text-gray-600">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 md:h-5 md:w-5 md:mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       휴식 및 아이디어 공유
                     </li>
-                    <li className="flex items-center text-gray-600">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <li className="flex items-center text-xs md:text-sm text-gray-600">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 md:h-5 md:w-5 md:mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       소규모 모임 및 토론
@@ -633,7 +625,7 @@ export default function AboutPage() {
               <div className="text-center mb-4">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold mt-4 mb-2 text-green-800">이용 규칙</h3>
