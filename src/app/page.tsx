@@ -52,6 +52,43 @@ export default function Home() {
     };
   }, [audioElement]);
 
+  // 전역 재생 상태가 변경될 때 로컬 상태 동기화
+  useEffect(() => {
+    console.log("전역 재생 상태 변경:", isPlaying);
+    setLocalIsPlaying(isPlaying);
+  }, [isPlaying]);
+
+  // 오디오 요소 이벤트 리스너 설정
+  useEffect(() => {
+    if (!audioElement) return;
+    
+    console.log("오디오 요소 이벤트 리스너 설정");
+    
+    const handleTimeUpdate = () => {
+      setCurrentTime(audioElement.currentTime);
+    };
+    
+    const handleLoadedMetadata = () => {
+      console.log("메인 페이지: 오디오 메타데이터 로드됨", audioElement.duration);
+      if (audioElement.duration && !isNaN(audioElement.duration)) {
+        setDuration(audioElement.duration);
+      }
+    };
+    
+    audioElement.addEventListener('timeupdate', handleTimeUpdate);
+    audioElement.addEventListener('loadedmetadata', handleLoadedMetadata);
+    
+    // 컴포넌트 마운트 시 메타데이터 로드 시도
+    if (audioElement.readyState >= 2) {
+      handleLoadedMetadata();
+    }
+    
+    return () => {
+      audioElement.removeEventListener('timeupdate', handleTimeUpdate);
+      audioElement.removeEventListener('loadedmetadata', handleLoadedMetadata);
+    };
+  }, [audioElement]);
+
   // 시간 형식 변환 함수 (초 -> MM:SS)
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60);
@@ -168,44 +205,56 @@ export default function Home() {
                     <button 
                       className="flex-1 bg-gradient-to-r from-blue-400 to-purple-500 hover:from-blue-500 hover:to-purple-600 text-white font-bold py-2 px-4 sm:px-6 rounded-full transition-all transform hover:scale-105 flex items-center justify-center shadow-md"
                       onClick={() => {
-                        if (!audioElement) return;
+                        console.log("재생 버튼 클릭", { 
+                          audioElement: !!audioElement,
+                          paused: audioElement?.paused, 
+                          readyState: audioElement?.readyState 
+                        });
                         
-                        if (audioElement.paused) {
-                          // 먼저 전역 상태를 변경하고 플레이어를 표시
-                          setLocalIsPlaying(true);
-                          setPlayingState(true);
+                        // 전역 상태 먼저 변경
+                        const newPlayingState = !localIsPlaying;
+                        setLocalIsPlaying(newPlayingState);
+                        setPlayingState(newPlayingState);
+                        
+                        if (newPlayingState) {
+                          // 재생 상태로 변경
                           showPlayer(); // 플레이어 표시
                           
-                          // 오디오 요소가 로드되었는지 확인
-                          if (audioElement.readyState === 0) {
-                            // 오디오가 아직 로드되지 않은 경우
-                            audioElement.load();
-                            
-                            // 로드 완료 이벤트 리스너 추가
-                            const handleCanPlay = () => {
+                          if (audioElement) {
+                            // 오디오 요소가 로드되었는지 확인
+                            if (audioElement.readyState < 2) {
+                              // 오디오가 아직 로드되지 않은 경우
+                              console.log("오디오 로드 중...");
+                              audioElement.load();
+                              
+                              // 로드 완료 이벤트 리스너 추가
+                              const handleCanPlay = () => {
+                                console.log("오디오 로드 완료, 재생 시도");
+                                audioElement.play().catch((error: Error) => {
+                                  console.error("메인 페이지 재생 실패:", error);
+                                  setLocalIsPlaying(false);
+                                  setPlayingState(false);
+                                });
+                                audioElement.removeEventListener('canplay', handleCanPlay);
+                              };
+                              
+                              audioElement.addEventListener('canplay', handleCanPlay);
+                            } else {
+                              // 이미 로드된 경우 바로 재생
+                              console.log("오디오 이미 로드됨, 바로 재생 시도");
                               audioElement.play().catch((error: Error) => {
-                                console.log("메인 페이지 재생 실패:", error);
+                                console.error("메인 페이지 재생 실패:", error);
                                 setLocalIsPlaying(false);
                                 setPlayingState(false);
                               });
-                              audioElement.removeEventListener('canplay', handleCanPlay);
-                            };
-                            
-                            audioElement.addEventListener('canplay', handleCanPlay);
-                          } else {
-                            // 이미 로드된 경우 바로 재생
-                            setTimeout(() => {
-                              audioElement.play().catch((error: Error) => {
-                                console.log("메인 페이지 재생 실패:", error);
-                                setLocalIsPlaying(false);
-                                setPlayingState(false);
-                              });
-                            }, 100);
+                            }
                           }
                         } else {
-                          audioElement.pause();
-                          setLocalIsPlaying(false);
-                          setPlayingState(false);
+                          // 일시정지 상태로 변경
+                          console.log("오디오 일시정지");
+                          if (audioElement) {
+                            audioElement.pause();
+                          }
                         }
                       }}
                     >
@@ -251,19 +300,29 @@ export default function Home() {
                       controls 
                       className="hidden"
                       src="/music/cm.mp3"
+                      onLoadedMetadata={(e) => {
+                        console.log("오디오 메타데이터 로드됨", e.currentTarget.duration);
+                        // 오디오 요소가 로드되면 duration 업데이트
+                        if (e.currentTarget.duration && !isNaN(e.currentTarget.duration)) {
+                          setDuration(e.currentTarget.duration);
+                        }
+                      }}
                       onPlay={() => {
+                        console.log("오디오 재생 시작 (onPlay)");
                         setLocalIsPlaying(true);
                         setPlayingState(true);
                       }}
                       onPause={() => {
+                        console.log("오디오 일시정지 (onPause)");
                         setLocalIsPlaying(false);
                         setPlayingState(false);
                       }}
                       onEnded={() => {
+                        console.log("오디오 재생 종료 (onEnded)");
                         setLocalIsPlaying(false);
                         setPlayingState(false);
                       }}
-                      preload="metadata"
+                      preload="auto"
                     >
                       브라우저가 오디오 재생을 지원하지 않습니다.
                     </audio>
