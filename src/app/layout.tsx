@@ -24,6 +24,12 @@ export const metadata: Metadata = {
   authors: [{ name: "하다 청년공간" }],
   creator: "하다 청년공간",
   publisher: "하다 청년공간",
+  verification: {
+    other: {
+      'naver-site-verification': 'f7edaf37c6dd7311770476781b28c75421de9c50',
+      'msvalidate.01': 'B617F4091F08492919255C617E022246',
+    },
+  },
   openGraph: {
     type: "website",
     locale: "ko_KR",
