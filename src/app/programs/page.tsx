@@ -71,7 +71,7 @@ export default function ProgramsPage() {
   const events = [
     {
       id: 1,
-      title: '폭싹 속았수다 체험형 전시회',
+      title: '폭싹 체험형 전시회',
       date: '2025년 4월 11일',
       description: '청년들을 위한 체험형 전시회로, 다양한 시각적 착시와 재미있는 체험 요소를 통해 새로운 경험을 제공합니다.',
       images: [
