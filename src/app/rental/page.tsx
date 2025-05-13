@@ -245,7 +245,7 @@ export default function RentalPage() {
               
               <div className="bg-white/70 p-6 rounded-xl mb-6 shadow-sm">
                 <p className="text-gray-700 text-lg mb-4 leading-relaxed">
-                  현재 하다 청년공간은 내부 행사가 많아 모든 공간의 대관 신청을 일시적으로 중단하고 있습니다.
+                  현재 청년공간은 내부 행사가 많아 모든 공간의 대관 신청을 일시적으로 중단하고 있습니다.
                 </p>
                 <p className="text-gray-700 text-lg leading-relaxed">
                   대관 재개 시점은 추후 공지될 예정이며, 불편을 드려 죄송합니다.
