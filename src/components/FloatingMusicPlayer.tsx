@@ -3,10 +3,12 @@
 import { useEffect, useState } from "react";
 import { useMusicPlayer } from "@/context/MusicPlayerContext";
 
-// 빈 props 타입을 Record<string, never>로 대체
-type FloatingMusicPlayerProps = Record<string, never>;
+// isVisible prop을 받을 수 있도록 타입 정의 수정
+interface FloatingMusicPlayerProps {
+  isVisible: boolean;
+}
 
-const FloatingMusicPlayer = ({}: FloatingMusicPlayerProps) => {
+const FloatingMusicPlayer = ({ isVisible }: FloatingMusicPlayerProps) => {
   const { songTitle, songDuration, isPlaying, togglePlay, audioElement } = useMusicPlayer();
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(songDuration);
@@ -69,8 +71,8 @@ const FloatingMusicPlayer = ({}: FloatingMusicPlayerProps) => {
     togglePlay();
   };
 
-  // 항상 플레이어를 표시 (isVisible 조건 제거)
-  return (
+  // isVisible 조건으로 플레이어 표시 여부 결정
+  return isVisible ? (
     <div className="fixed bottom-4 right-4 z-50 animate-float-in">
       <div className="relative group">
         <div className="absolute -inset-0 bg-gradient-to-r from-blue-500/10 to-purple-600/10 rounded-full blur-none opacity-0 group-hover:opacity-30 transition duration-300"></div>
@@ -130,7 +132,7 @@ const FloatingMusicPlayer = ({}: FloatingMusicPlayerProps) => {
         </div>
       </div>
     </div>
-  );
+  ) : null;
 };
 
 export default FloatingMusicPlayer;
