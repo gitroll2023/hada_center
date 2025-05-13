@@ -343,63 +343,78 @@ export default function AboutPage() {
                   borderBottom: '2px solid #6a82fb'
                 }}>&lsquo;하다&rsquo;</span>
               </motion.h2>
-              <motion.p 
-                className="text-gray-700 mb-5 leading-relaxed"
+              <motion.div
+                className="space-y-6"
                 initial={{ opacity: 0 }}
                 animate={!isLoading ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.5, delay: 2.0 }}
               >
-                광주광역시 하다 청년공간은 청년들이 자유롭게 모여 소통하고 성장할 수 있는 
-                열린 공간입니다. <span className="text-blue-600 font-bold" style={{ fontFamily: 'Paperlogy-8ExtraBold', fontWeight: 900 }}>&lsquo;하다&rsquo;</span>라는 이름에는 청년들이 함께 모여 다양한 활동을 
-                하다라는 의미가 담겨 있습니다.
-              </motion.p>
-              
-              <motion.div 
-                className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-5 mb-5 shadow-sm border border-blue-100"
-                initial={{ opacity: 0, y: 20 }}
-                animate={!isLoading ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ duration: 0.6, delay: 2.2 }}
-              >
-                <div className="flex flex-col space-y-3">
-                  <motion.div 
-                    className="text-center mb-2"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={!isLoading ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-                    transition={{ duration: 0.5, delay: 2.4 }}
-                  >
-                    <span className="inline-block bg-gradient-to-r from-blue-500 to-purple-500 px-4 py-2 rounded-full text-white text-lg font-semibold shadow-sm">
-                      소통하다, 성장하다, 꿈꾸다, 도전하다
-                    </span>
-                  </motion.div>
-                  <motion.p 
-                    className="text-gray-700 leading-relaxed text-center"
-                    initial={{ opacity: 0 }}
-                    animate={!isLoading ? { opacity: 1 } : { opacity: 0 }}
-                    transition={{ duration: 0.5, delay: 2.6 }}
-                  >
-                    청년들의 다양한 활동과 가능성을<br /> 
+                {/* 첫 번째 문단 */}
+                <div className="bg-white rounded-xl p-5 shadow-md border-l-4 border-blue-500">
+                  <p className="text-gray-700 leading-relaxed">
+                    광주광역시 <span style={{ 
+                      fontFamily: 'SBAggroB', 
+                      fontWeight: 900, 
+                      fontSize: '1.2em',
+                      color: '#3454d1',
+                      textShadow: '1px 1px 2px rgba(106, 130, 251, 0.3)'
+                    }}>하다</span> 청년공간은<br />
+                    <span className="font-medium">청년들이 자유롭게 모여 소통하고 성장할 수 있는
+                    열린 공간</span>입니다.
+                  </p>
+                </div>
+
+                {/* 두 번째 문단 */}
+                <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-5 shadow-md border-l-4 border-purple-400">
+                  <p className="text-gray-700 leading-relaxed">
+                    <span style={{ 
+                      fontFamily: 'SBAggroB', 
+                      fontWeight: 900, 
+                      fontSize: '1.2em',
+                      color: '#3454d1',
+                      textShadow: '1px 1px 2px rgba(106, 130, 251, 0.3)'
+                    }}>&lsquo;하다&rsquo;</span>라는 이름에는<br />
+                    청년들이 함께 모여 다양한 활동을<br />
+                    <span className="inline-block mt-1 px-2 py-1 bg-blue-100 rounded-md font-bold text-blue-700">하다</span>라는 의미가 담겨 있습니다.
+                  </p>
+                </div>
+
+                {/* 세 번째 문단 - 키워드 */}
+                <div className="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-xl p-5 shadow-md">
+                  <div className="flex flex-wrap gap-2 mb-3 justify-center">
+                    {['소통하다', '성장하다', '꿈꾸다', '도전하다'].map((keyword, index) => (
+                      <span 
+                        key={index}
+                        className="inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-sm md:text-base font-medium shadow-sm"
+                      >
+                        {keyword}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="text-gray-700 leading-relaxed text-center mt-3">
+                    청년들의 다양한 활동과 가능성을<br />
                     <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">지원하는 공간</span>으로 운영되고 있습니다.
-                  </motion.p>
+                  </p>
+                </div>
+
+                {/* 네 번째 문단 */}
+                <div className="bg-white rounded-xl p-5 shadow-md border-t-4 border-blue-500">
+                  <p className="text-gray-700 leading-relaxed text-center">
+                    청년들의 아이디어와 열정으로<br />
+                    시너지를 만들어내는<br />
+                    <span style={{ 
+                      fontFamily: 'SBAggroB', 
+                      fontWeight: 900, 
+                      fontSize: '1.3em',
+                      color: '#3454d1',
+                      textShadow: '1px 1px 2px rgba(106, 130, 251, 0.5)',
+                      padding: '0 4px',
+                      borderBottom: '2px solid #6a82fb'
+                    }}>&lsquo;하다&rsquo;</span> 청년공간에서<br />
+                    <span className="inline-block mt-2 font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">여러분의 꿈을 펼쳐보세요.</span>
+                  </p>
                 </div>
               </motion.div>
-              
-              <motion.p 
-                className="text-gray-700 leading-relaxed"
-                initial={{ opacity: 0 }}
-                animate={!isLoading ? { opacity: 1 } : { opacity: 0 }}
-                transition={{ duration: 0.6, delay: 2.8 }}
-              >
-                청년들의 아이디어와 열정으로 시너지를 만들어내는 
-                <span style={{ 
-                  fontFamily: 'SBAggroB', 
-                  fontWeight: 900, 
-                  fontSize: '1.2em',
-                  color: '#3454d1',
-                  textShadow: '1px 1px 2px rgba(106, 130, 251, 0.5)',
-                  padding: '0 4px',
-                  borderBottom: '2px solid #6a82fb'
-                }}>&lsquo;하다&rsquo;</span> 청년공간에서 여러분의 꿈을 펼쳐보세요.
-              </motion.p>
             </motion.div>
           </div>
         </div>
@@ -418,7 +433,7 @@ export default function AboutPage() {
             하다 청년공간의 특징
           </motion.h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 justify-center">
             <motion.div 
               className="bg-white p-4 md:p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
@@ -426,7 +441,7 @@ export default function AboutPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-start">
+              <div className="flex flex-col items-center md:items-start md:flex-row gap-4 md:gap-6">
                 <div className="w-1/4 md:w-1/3 relative">
                   <div className="absolute -top-2 -left-2 w-6 h-6 sm:w-12 sm:h-12 bg-blue-100 rounded-full -z-10"></div>
                   <div className="aspect-square bg-blue-100 rounded-lg flex items-center justify-center">
@@ -435,12 +450,12 @@ export default function AboutPage() {
                     </svg>
                   </div>
                 </div>
-                <div className="w-3/4 md:w-2/3">
+                <div className="w-full md:w-2/3 text-center md:text-left">
                   <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-blue-600">다목적 공간</h3>
                   <p className="text-sm md:text-base text-gray-700 mb-3 md:mb-4">
                     다양한 활동과 모임을 위한 유연한 공간으로, 필요에 따라 재구성이 가능합니다.
                   </p>
-                  <ul className="space-y-1 md:space-y-2">
+                  <ul className="space-y-1 md:space-y-2 inline-block text-left">
                     <li className="flex items-center text-xs md:text-sm text-gray-600">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 md:h-5 md:w-5 md:mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -471,7 +486,7 @@ export default function AboutPage() {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-start">
+              <div className="flex flex-col items-center md:items-start md:flex-row gap-4 md:gap-6">
                 <div className="w-1/4 md:w-1/3 relative">
                   <div className="absolute -top-2 -left-2 w-6 h-6 sm:w-12 sm:h-12 bg-green-100 rounded-full -z-10"></div>
                   <div className="aspect-square bg-green-100 rounded-lg flex items-center justify-center">
@@ -480,12 +495,12 @@ export default function AboutPage() {
                     </svg>
                   </div>
                 </div>
-                <div className="w-3/4 md:w-2/3">
+                <div className="w-full md:w-2/3 text-center md:text-left">
                   <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-green-600">학습 공간</h3>
                   <p className="text-sm md:text-base text-gray-700 mb-3 md:mb-4">
                     집중적인 학습과 연구를 위한 조용하고 쾌적한 환경을 제공합니다.
                   </p>
-                  <ul className="space-y-1 md:space-y-2">
+                  <ul className="space-y-1 md:space-y-2 inline-block text-left">
                     <li className="flex items-center text-xs md:text-sm text-gray-600">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 md:h-5 md:w-5 md:mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -516,7 +531,7 @@ export default function AboutPage() {
               transition={{ duration: 0.6, delay: 0.5 }}
               viewport={{ once: true }}
             >
-              <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-start">
+              <div className="flex flex-col items-center md:items-start md:flex-row gap-4 md:gap-6">
                 <div className="w-1/4 md:w-1/3 relative">
                   <div className="absolute -top-2 -left-2 w-6 h-6 sm:w-12 sm:h-12 bg-purple-100 rounded-full -z-10"></div>
                   <div className="aspect-square bg-purple-100 rounded-lg flex items-center justify-center">
@@ -525,29 +540,29 @@ export default function AboutPage() {
                     </svg>
                   </div>
                 </div>
-                <div className="w-3/4 md:w-2/3">
+                <div className="w-full md:w-2/3 text-center md:text-left">
                   <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-purple-600">커뮤니티 공간</h3>
                   <p className="text-sm md:text-base text-gray-700 mb-3 md:mb-4">
                     청년들 간의 소통과 교류를 촉진하는 편안하고 친근한 공간입니다.
                   </p>
-                  <ul className="space-y-1 md:space-y-2">
+                  <ul className="space-y-1 md:space-y-2 inline-block text-left">
                     <li className="flex items-center text-xs md:text-sm text-gray-600">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 md:h-5 md:w-5 md:mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      네트워킹 및 교류
+                      네트워킹 및 교류 활동
                     </li>
                     <li className="flex items-center text-xs md:text-sm text-gray-600">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 md:h-5 md:w-5 md:mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      휴식 및 아이디어 공유
+                      동아리 및 소모임
                     </li>
                     <li className="flex items-center text-xs md:text-sm text-gray-600">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 md:h-5 md:w-5 md:mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      소규모 모임 및 토론
+                      아이디어 공유 및 협업
                     </li>
                   </ul>
                 </div>
@@ -625,7 +640,7 @@ export default function AboutPage() {
               <div className="text-center mb-4">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold mt-4 mb-2 text-green-800">이용 규칙</h3>

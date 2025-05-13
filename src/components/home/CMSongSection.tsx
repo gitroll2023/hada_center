@@ -314,9 +314,12 @@ const CMSongSection = () => {
                   <span>음악재생은 우측하단에 플레이 버튼!</span>
                 </p>
                 <p className="whitespace-pre-line leading-relaxed">
-                  <span className="font-semibold text-indigo-600">&ldquo;하다! 하자!&rdquo;</span>는 청년공간 하다의 신나는 CM송입니다.
-                  
-                  &ldquo;하고 싶은 게 너무 많을 땐 혼자 말고 같이 와봐&rdquo;라는 가사처럼 함께 성장하는 청년공간의 의미를 담았습니다.
+                  <span className="font-semibold text-indigo-600">&ldquo;하다! 하자!&rdquo;</span>는<br />
+                  청년공간 하다의 신나는 CM송입니다.<br />
+                  <br />
+                  &ldquo;하고 싶은 게 너무 많을 땐<br />
+                  혼자 말고 같이 와봐&rdquo;라는 가사처럼<br />
+                  함께 성장하는 청년공간의 의미를 담았습니다.
                 </p>
               </div>
             </div>

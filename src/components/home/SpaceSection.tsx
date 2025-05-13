@@ -63,7 +63,9 @@ const SpaceSection = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-blue-800">청년공간 하다</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            광주 청년들의 소통과 성장을 위한 열린 공간입니다. 다양한 프로그램과 편안한 공간에서 여러분의 꿈과 아이디어를 펼쳐보세요.
+            광주 청년들의 소통과 성장을 위한 열린 공간입니다.<br />
+            다양한 프로그램과 편안한 공간에서<br />
+            여러분의 꿈과 아이디어를 펼쳐보세요.
           </p>
         </motion.div>
 
