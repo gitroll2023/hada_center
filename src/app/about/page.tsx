@@ -402,7 +402,7 @@ export default function AboutPage() {
                 animate={!isLoading ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.6, delay: 2.8 }}
               >
-                광주 청년들의 아이디어와 열정이 모여 시너지를 만들어내는 
+                청년들의 아이디어와 열정으로 시너지를 만들어내는 
                 <span style={{ 
                   fontFamily: 'SBAggroB', 
                   fontWeight: 900, 

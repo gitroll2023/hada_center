@@ -330,6 +330,103 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 가사 모달 */}
+      <div 
+        id="lyricsModal" 
+        className="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center p-4"
+        onClick={(e) => {
+          // 모달 바깥쪽 클릭 시 닫기
+          if (e.target === e.currentTarget) {
+            const modal = document.getElementById('lyricsModal');
+            if (modal) {
+              modal.classList.add('hidden');
+              modal.classList.remove('flex');
+            }
+          }
+        }}
+      >
+        <div className="bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-900 rounded-2xl max-w-lg w-full mx-auto p-6 shadow-2xl border border-blue-400/30 relative animate-fade-in-up">
+          {/* 배경 장식 요소 */}
+          <div className="absolute -top-5 -right-5 w-24 h-24 bg-blue-500/20 rounded-full blur-xl"></div>
+          <div className="absolute -bottom-5 -left-5 w-24 h-24 bg-purple-500/20 rounded-full blur-xl"></div>
+          
+          <button 
+            className="absolute top-3 right-3 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-1.5 transition-all"
+            onClick={() => {
+              const modal = document.getElementById('lyricsModal');
+              if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+              }
+            }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          
+          <div className="flex items-center justify-center mb-4">
+            <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xl mr-3 shadow-md">
+              🎵
+            </div>
+            <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-purple-200">하다! 하자! - 가사</h3>
+          </div>
+          
+          <div className="bg-white/10 backdrop-blur-md rounded-xl p-5 shadow-inner border border-white/20 relative overflow-hidden">
+            {/* 배경 음표 장식 */}
+            <div className="absolute top-5 right-5 text-white/5 text-4xl">♪</div>
+            <div className="absolute bottom-5 left-5 text-white/5 text-4xl">♫</div>
+            
+            <div className="text-blue-100 whitespace-pre-wrap font-medium leading-relaxed text-center overflow-y-auto max-h-[50vh] px-2 py-1 relative z-10 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
+              <p>(intro)</p>
+              <p>짝! 짝!</p>
+              <p>하다! 하자!</p>
+              <p>청년공간 하다!</p>
+              <br />
+              <p>(Verse 1)</p>
+              <p>하고 싶은 게 너무 많을 땐</p>
+              <p>혼자 말고 같이 와봐</p>
+              <p>광주 도심 한복판</p>
+              <p>열려 있는 그 공간!</p>
+              <br />
+              <p>(Pre-Chorus)</p>
+              <p>스터디도! (짝!)</p>
+              <p>네트워킹도! (짝!)</p>
+              <p>쉼도, 꿈도</p>
+              <p>이뤄지는 곳!</p>
+              <br />
+              <p>(Chorus)</p>
+              <p>하다! 하자!</p>
+              <p>청년공간 하다!</p>
+              <p>하다! 하자!</p>
+              <p>청년공간 하다!</p>
+              <br />
+              <p>(Verse 2)</p>
+              <p>청년들의 꿈과 열정이</p>
+              <p>모여드는 그 공간</p>
+              <p>서로 배우고 나누며</p>
+              <p>함께 성장하는 곳!</p>
+              <br />
+              <p>(Pre-Chorus)</p>
+              <p>스터디도! (짝!)</p>
+              <p>네트워킹도! (짝!)</p>
+              <p>쉼도, 꿈도</p>
+              <p>이뤄지는 곳!</p>
+              <br />
+              <p>(Chorus)</p>
+              <p>하다! 하자!</p>
+              <p>청년공간 하다!</p>
+              <p>하다! 하자!</p>
+              <p>청년공간 하다!</p>
+              <br />
+              <p>(Outro)</p>
+              <p>하다! 하자!</p>
+              <p>청년공간 하다!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* 소개 섹션 - 카드 형태 */}
       <section className="py-20 bg-gradient-to-b from-indigo-600 via-indigo-500 to-blue-50">
         <div className="container mx-auto px-4">
