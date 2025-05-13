@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title><![CDATA[하다 청년공간 - 행사 및 프로그램]]></title>
+    <description><![CDATA[광주 청년공간 하다의 최신 행사와 프로그램 소식을 확인하세요.]]></description>
+    <link>https://www.hada-in-gwangju.co.kr</link>
+    <image>
+      <url>https://www.hada-in-gwangju.co.kr/logo.png</url>
+      <title>하다 청년공간 - 행사 및 프로그램</title>
+      <link>https://www.hada-in-gwangju.co.kr</link>
+    </image>
+    <generator>RSS for Node</generator>
+    <lastBuildDate>Tue, 13 May 2025 12:58:02 GMT</lastBuildDate>
+    <atom:link href="https://www.hada-in-gwangju.co.kr/api/rss" rel="self" type="application/rss+xml"/>
+    <copyright><![CDATA[© 2025 청년공간 하다. All rights reserved.]]></copyright>
+    <language><![CDATA[ko]]></language>
+    <item>
+      <title><![CDATA[청년 네트워킹 데이]]></title>
+      <description><![CDATA[다양한 분야의 청년들이 모여 네트워킹하는 행사입니다. 새로운 인연과 기회를 만들어보세요.]]></description>
+      <link>https://www.hada-in-gwangju.co.kr/events/1</link>
+      <guid isPermaLink="false">event-1</guid>
+      <pubDate>Thu, 20 May 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[스타트업 아이디어 경진대회]]></title>
+      <description><![CDATA[혁신적인 아이디어를 가진 청년들의 경연장! 당신의 아이디어를 펼쳐보세요.]]></description>
+      <link>https://www.hada-in-gwangju.co.kr/events/2</link>
+      <guid isPermaLink="false">event-2</guid>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[청년 문화예술 페스티벌]]></title>
+      <description><![CDATA[청년 예술가들의 작품 전시와 공연이 어우러진 축제의 장입니다.]]></description>
+      <link>https://www.hada-in-gwangju.co.kr/events/3</link>
+      <guid isPermaLink="false">event-3</guid>
+      <pubDate>Thu, 10 Jul 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[폭싹 체험형 전시회]]></title>
+      <description><![CDATA[추억속으로 떠나는 체험형 전시회]]></description>
+      <link>https://www.hada-in-gwangju.co.kr/events/4</link>
+      <guid isPermaLink="false">event-4</guid>
+      <pubDate>Fri, 11 Apr 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[연애해봄 문화공연]]></title>
+      <description><![CDATA[봄을 맞아 청년들을 위한 로맨틱한 문화공연]]></description>
+      <link>https://www.hada-in-gwangju.co.kr/events/5</link>
+      <guid isPermaLink="false">event-5</guid>
+      <pubDate>Sun, 09 Mar 2025 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

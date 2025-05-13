@@ -69,6 +69,11 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.hada-in-gwangju.co.kr'),
   alternates: {
     canonical: '/',
+    types: {
+      'application/rss+xml': [
+        { url: '/rss.xml', title: '하다 청년공간 - 행사 및 프로그램 RSS 피드' }
+      ]
+    }
   },
 };
 
