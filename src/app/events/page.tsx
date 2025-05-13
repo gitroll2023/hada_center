@@ -737,7 +737,7 @@ export default function EventsPage() {
                   <br /><br />
                   <span className="text-sm text-gray-500">
                     * 신청 오픈 소식은 인스타그램
-                    <br />(@hada_center)에서 가장 먼저 확인하실 수 있어요!
+                    <br />(@hada_in_gwangju)에서 가장 먼저 확인하실 수 있어요!
                   </span>
                 </p>
                 <button 
