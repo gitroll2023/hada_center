@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 // 이벤트 타입 정의
 interface Event {
@@ -26,8 +25,8 @@ const events: Event[] = [
     date: "2024.10.29",
     description: "청년들과 함께하는 신나는 할로윈 파티! 다양한 코스튬과 함께 특별한 밤을 즐겨보세요.",
     images: [
-      "/images/history/241029 할로윈파티/1.jpg",
       "/images/history/241029 할로윈파티/2.jpg",
+      "/images/history/241029 할로윈파티/1.jpg",
       "/images/history/241029 할로윈파티/3.jpg"
     ],
     color: "orange"
@@ -291,52 +290,52 @@ export default function EventsPage() {
               backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
             }}
           />
-        </div>
-        
-        {/* 로딩 텍스트 */}
-        <motion.div
-          className="text-center mt-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-        >
-          <motion.h2 
-            className="text-2xl font-bold text-white mb-2"
-            animate={{ 
-              opacity: [0.7, 1, 0.7],
-            }}
-            transition={{ 
-              duration: 1.5, 
-              repeat: Infinity,
-              repeatType: "mirror" 
-            }}
+          
+          {/* 로딩 텍스트 */}
+          <motion.div
+            className="relative z-20 text-center mt-36"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
           >
-            문화행사 불러오는 중
-          </motion.h2>
-          <motion.div className="flex space-x-1 justify-center">
-            {[0, 1, 2].map((dot) => (
-              <motion.div
-                key={dot}
-                className="w-3 h-3 bg-white rounded-full"
-                initial={{ opacity: 0.5, y: 0 }}
-                animate={{ opacity: [0.5, 1, 0.5], y: [0, -5, 0] }}
-                transition={{
-                  duration: 0.6,
-                  repeat: Infinity,
-                  delay: dot * 0.2
-                }}
-              />
-            ))}
+            <motion.h2 
+              className="text-2xl font-bold text-white mb-2"
+              animate={{ 
+                opacity: [0.7, 1, 0.7],
+              }}
+              transition={{ 
+                duration: 1.5, 
+                repeat: Infinity,
+                repeatType: "mirror" 
+              }}
+            >
+              문화행사 불러오는 중
+            </motion.h2>
+            <motion.div className="flex space-x-1 justify-center">
+              {[0, 1, 2].map((dot) => (
+                <motion.div
+                  key={dot}
+                  className="w-3 h-3 bg-white rounded-full"
+                  initial={{ opacity: 0.5, y: 0 }}
+                  animate={{ opacity: [0.5, 1, 0.5], y: [0, -5, 0] }}
+                  transition={{
+                    duration: 0.6,
+                    repeat: Infinity,
+                    delay: dot * 0.2
+                  }}
+                />
+              ))}
+            </motion.div>
+            <motion.p 
+              className="text-white/80 text-sm mt-4 max-w-xs mx-auto"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2 }}
+            >
+              청년들의 열정과 창의력이 담긴<br /> 문화행사를 소개합니다.
+            </motion.p>
           </motion.div>
-          <motion.p 
-            className="text-white/80 text-sm mt-4 max-w-xs mx-auto"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2 }}
-          >
-            청년들의 열정과 창의력이 담긴<br /> 문화행사를 준비중입니다.
-          </motion.p>
-        </motion.div>
+        </div>
       </AnimatePresence>
     );
   }
@@ -493,7 +492,7 @@ export default function EventsPage() {
                   whileHover={{ scale: 1.05, rotate: 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="relative w-full h-[280px] md:h-[420px]">
+                  <div className="relative w-full h-full">
                     <Image
                       src="/images/history/250309 연애해봄 문화공연/3.jpg"
                       alt="연애해봄 문화공연"
@@ -651,7 +650,7 @@ export default function EventsPage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="bg-white rounded-xl p-8 shadow-lg text-center"
             >
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-500 text-2xl font-bold mx-auto mb-4">
+              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center text-blue-500 text-3xl mx-auto mb-6">
                 1
               </div>
               <h3 className="text-xl font-bold mb-4">행사 선택하기</h3>
@@ -665,7 +664,7 @@ export default function EventsPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="bg-white rounded-xl p-8 shadow-lg text-center"
             >
-              <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center text-teal-500 text-2xl font-bold mx-auto mb-4">
+              <div className="w-20 h-20 bg-teal-100 rounded-full flex items-center justify-center text-teal-500 text-3xl mx-auto mb-6">
                 2
               </div>
               <h3 className="text-xl font-bold mb-4">신청하기</h3>
@@ -679,7 +678,7 @@ export default function EventsPage() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="bg-white rounded-xl p-8 shadow-lg text-center"
             >
-              <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center text-pink-500 text-2xl font-bold mx-auto mb-4">
+              <div className="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center text-pink-500 text-3xl mx-auto mb-6">
                 3
               </div>
               <h3 className="text-xl font-bold mb-4">참여하기</h3>

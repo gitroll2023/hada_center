@@ -60,6 +60,9 @@ const Header = () => {
         {/* 데스크탑 네비게이션 */}
         <nav className="hidden md:flex items-center">
           <div className="flex space-x-1">
+            <Link href="/" className="px-4 py-2 rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all font-medium">
+              홈
+            </Link>
             <Link href="/about" className="px-4 py-2 rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all font-medium">
               공간소개
             </Link>
@@ -75,7 +78,7 @@ const Header = () => {
           </div>
           <div className="ml-6 pl-6 border-l border-gray-200">
             <Link 
-              href="https://www.instagram.com/hada_in_gwangju?igsh=MW9iZXV5aDdxdWZhag%3D%3D&utm_source=qr" 
+              href="https://www.instagram.com/hada_in_gwangju" 
               target="_blank" 
               className="flex items-center text-gray-600 hover:text-pink-500 transition-colors"
             >
@@ -138,6 +141,13 @@ const Header = () => {
 
             <div className="flex flex-col space-y-4">
               <Link
+                href="/"
+                className="py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                onClick={toggleMenu}
+              >
+                홈
+              </Link>
+              <Link
                 href="/about"
                 className="py-2 text-gray-700 hover:text-blue-600 transition-colors"
                 onClick={toggleMenu}
@@ -167,7 +177,7 @@ const Header = () => {
               </Link>
               <div className="pt-4 mt-4 border-t border-gray-200">
                 <Link
-                  href="https://www.instagram.com/hada_in_gwangju?igsh=MW9iZXV5aDdxdWZhag%3D%3D&utm_source=qr"
+                  href="https://www.instagram.com/hada_in_gwangju"
                   target="_blank"
                   className="flex items-center py-2 text-gray-700 hover:text-pink-500 transition-colors"
                   onClick={toggleMenu}

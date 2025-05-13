@@ -4,11 +4,10 @@ import { useEffect, useState } from "react";
 import { useMusicPlayer } from "@/context/MusicPlayerContext";
 
 interface FloatingMusicPlayerProps {
-  isVisible: boolean;
 }
 
-const FloatingMusicPlayer = ({ isVisible }: FloatingMusicPlayerProps) => {
-  const { songUrl, songTitle, songDuration, isPlaying, togglePlay, audioElement } = useMusicPlayer();
+const FloatingMusicPlayer = ({}: FloatingMusicPlayerProps) => {
+  const { songTitle, songDuration, isPlaying, togglePlay, audioElement } = useMusicPlayer();
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(songDuration);
 

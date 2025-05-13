@@ -55,7 +55,6 @@ export default function AboutPage() {
                   style={{
                     top: '50%',
                     left: '50%',
-                    margin: '-1.5rem',
                   }}
                   initial={{ x: 0, y: 0 }}
                   animate={{
@@ -209,6 +208,7 @@ export default function AboutPage() {
                     className="inline-block text-white/70 hover:text-white transition-colors"
                   >
                     {tag}
+                    {index < 4 && <span className="mx-2">•</span>}
                   </span>
                 ))}
               </motion.div>

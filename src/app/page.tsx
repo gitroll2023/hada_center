@@ -3,33 +3,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import ImageProtection from "../components/ImageProtection";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { useMusicPlayer } from "@/context/MusicPlayerContext";
 
 export default function Home() {
-  const [scrollY, setScrollY] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const [localIsPlaying, setLocalIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(208); // 3:28 = 208초로 초기화
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const { showPlayer, setPlayingState, isPlaying, audioElement } = useMusicPlayer();
+  const { isPlaying, setPlayingState, showPlayer, audioElement } = useMusicPlayer();
   
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    
     // 페이지 로드 애니메이션
     setTimeout(() => {
       setIsLoaded(true);
     }, 300);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
   }, []);
 
   // 전역 재생 상태가 변경될 때 로컬 상태도 업데이트
@@ -329,107 +317,18 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+              
+              {/* CM송 설명 */}
+              <div className="mt-4 p-3 bg-indigo-700/50 rounded-lg text-blue-100 text-sm">
+                <p>
+                  <span className="font-semibold text-white">"하다! 하자!"</span>는 청년들의 꿈과 열정이 모이는 공간을 표현한 CM송입니다. 
+                  "하고 싶은 게 너무 많을 땐 혼자 말고 같이 와봐"라는 가사처럼 함께 성장하는 청년공간의 의미를 담았습니다.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* 가사 모달 */}
-      <div 
-        id="lyricsModal" 
-        className="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center p-4"
-        onClick={(e) => {
-          // 모달 바깥쪽 클릭 시 닫기
-          if (e.target === e.currentTarget) {
-            const modal = document.getElementById('lyricsModal');
-            if (modal) {
-              modal.classList.add('hidden');
-              modal.classList.remove('flex');
-            }
-          }
-        }}
-      >
-        <div className="bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-900 rounded-2xl max-w-lg w-full mx-auto p-6 shadow-2xl border border-blue-400/30 relative animate-fade-in-up">
-          {/* 배경 장식 요소 */}
-          <div className="absolute -top-5 -right-5 w-24 h-24 bg-blue-500/20 rounded-full blur-xl"></div>
-          <div className="absolute -bottom-5 -left-5 w-24 h-24 bg-purple-500/20 rounded-full blur-xl"></div>
-          
-          <button 
-            className="absolute top-3 right-3 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-1.5 transition-all"
-            onClick={() => {
-              const modal = document.getElementById('lyricsModal');
-              if (modal) {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-              }
-            }}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-          
-          <div className="flex items-center justify-center mb-4">
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xl mr-3 shadow-md">
-              🎵
-            </div>
-            <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-purple-200">하다! 하자! - 가사</h3>
-          </div>
-          
-          <div className="bg-white/10 backdrop-blur-md rounded-xl p-5 shadow-inner border border-white/20 relative overflow-hidden">
-            {/* 배경 음표 장식 */}
-            <div className="absolute top-5 right-5 text-white/5 text-4xl">♪</div>
-            <div className="absolute bottom-5 left-5 text-white/5 text-4xl">♫</div>
-            
-            <pre className="text-blue-100 whitespace-pre font-medium leading-relaxed text-center overflow-y-auto max-h-[50vh] px-2 py-1 relative z-10 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
-{`(intro)
-짝! 짝!
-하다! 하자!
-청년공간 하다!
-
-(Verse 1)
-하고 싶은 게 너무 많을 땐
-혼자 말고 같이 와봐
-광주 도심 한복판
-열려 있는 그 공간!
-
-(Pre-Chorus)
-스터디도! (짝!)
-네트워킹도! (짝!)
-쉼도, 꿈도
-이뤄지는 곳!
-
-(Chorus)
-하다! 하자!
-청년공간 하다!
-하다! 하자!
-청년공간 하다!
-
-(Verse 2)
-청년들의 꿈과 열정이
-모여드는 그 공간
-서로 배우고 나누며
-함께 성장하는 곳!
-
-(Pre-Chorus)
-스터디도! (짝!)
-네트워킹도! (짝!)
-쉼도, 꿈도
-이뤄지는 곳!
-
-(Chorus)
-하다! 하자!
-청년공간 하다!
-하다! 하자!
-청년공간 하다!
-
-(Outro)
-하다! 하자!
-청년공간 하다!`}
-            </pre>
-          </div>
-        </div>
-      </div>
 
       {/* 소개 섹션 - 카드 형태 */}
       <section className="py-20 bg-gradient-to-b from-indigo-600 via-indigo-500 to-blue-50">
@@ -652,14 +551,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="text-center mt-12">
-            <Link 
-              href="#" 
-              className="inline-block bg-white text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 font-bold py-3 px-8 rounded-full border-2 border-purple-300 transition-all transform hover:scale-105"
-            >
-              더 많은 소식 보기
-            </Link>
-          </div>
+   
         </div>
       </section>
       <style jsx global>{`

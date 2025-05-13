@@ -439,20 +439,20 @@ export default function ProgramsPage() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-            {events.map((event, index) => {
+            {events.map((event) => {
               const currentIndex = getCurrentImageIndex(event.id);
-              const isEven = index % 2 === 0;
+              const isEven = event.id % 2 === 0;
               
               return (
                 <div 
                   key={event.id} 
                   className={`group relative overflow-hidden rounded-2xl shadow-xl transition-all duration-500 hover:shadow-2xl ${
-                    index === 0 ? 'md:col-span-12' : 'md:col-span-6'
-                  } ${index >= 3 ? 'md:col-span-4' : ''}`}
+                    event.id === 1 ? 'md:col-span-12' : 'md:col-span-6'
+                  } ${event.id >= 3 ? 'md:col-span-4' : ''}`}
                 >
                   <div className="relative overflow-hidden" style={{ 
-                    height: index === 0 ? '400px' : '300px',
-                    maxHeight: index === 0 ? '400px' : '300px'
+                    height: event.id === 1 ? '400px' : '300px',
+                    maxHeight: event.id === 1 ? '400px' : '300px'
                   }}>
                     <Image
                       src={event.images[currentIndex]}
@@ -550,7 +550,7 @@ export default function ProgramsPage() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {clubs.map((club, index) => (
+            {clubs.map((club) => (
               <div 
                 key={club.id} 
                 className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
