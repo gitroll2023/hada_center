@@ -27,18 +27,7 @@ export default function Home() {
     <div className="min-h-screen">
       <ImageProtection />
       
-      {/* 로딩 화면 */}
-      {!isLoaded && (
-        <div className="fixed inset-0 bg-gradient-to-br from-indigo-900 to-purple-800 flex items-center justify-center z-50">
-          <div className="text-center">
-            <div className="w-24 h-24 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center mx-auto mb-6 animate-pulse">
-              <span className="text-3xl font-bold text-white">하다</span>
-            </div>
-            <h2 className="text-2xl font-bold text-white mb-2">청년공간 하다</h2>
-            <p className="text-white/80">청년들의 열린 공간</p>
-          </div>
-        </div>
-      )}
+    
       
       {/* 메인 콘텐츠 */}
       <div className={`transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
