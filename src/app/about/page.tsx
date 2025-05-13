@@ -46,16 +46,12 @@ export default function AboutPage() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="relative w-full max-w-md aspect-square">
+            <div className="relative w-80 h-80 flex items-center justify-center">
               {/* 회전하는 원형 아이콘들 */}
               {['💙', '🏛️', '🌱', '🤝', '💭', '✨'].map((emoji, index) => (
                 <motion.div
                   key={index}
                   className="absolute w-16 h-16 bg-white rounded-full flex items-center justify-center text-2xl shadow-lg"
-                  style={{
-                    top: '50%',
-                    left: '50%',
-                  }}
                   initial={{ x: 0, y: 0 }}
                   animate={{
                     x: Math.cos(index * (Math.PI / 3)) * 120,
@@ -73,10 +69,9 @@ export default function AboutPage() {
                   {emoji}
                 </motion.div>
               ))}
-
               {/* 중앙 로고 */}
               <motion.div
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white rounded-full w-28 h-28 flex items-center justify-center shadow-xl"
+                className="absolute z-10 bg-white rounded-full w-28 h-28 flex items-center justify-center shadow-xl"
                 initial={{ scale: 0 }}
                 animate={{ scale: [0, 1.2, 1], rotate: [0, -10, 10, 0] }}
                 transition={{ 

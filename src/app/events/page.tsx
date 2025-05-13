@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
+import { useState, useEffect, useRef, useCallback } from 'react';
+import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // 이벤트 타입 정의
 interface Event {
@@ -235,99 +235,92 @@ export default function EventsPage() {
     );
   };
 
-  // 로딩 화면
-  if (isLoading) {
-    return (
-      <AnimatePresence>
-        <div className="fixed inset-0 z-40 flex flex-col items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 overflow-hidden">
-          <div className="relative w-full max-w-md aspect-square">
-            {/* 회전하는 원형 이벤트 아이콘들 */}
-            {['🎭', '🎨', '🎬', '🎵', '🎉', '🎊'].map((emoji, index) => (
-              <motion.div
-                key={index}
-                className="absolute w-16 h-16 bg-white rounded-full flex items-center justify-center text-2xl shadow-lg"
-                style={{
-                  top: '50%',
-                  left: '50%',
-                  margin: '-1.5rem',
-                }}
-                initial={{ x: 0, y: 0 }}
-                animate={{ x: Math.cos(index * (Math.PI / 3)) * 120, y: Math.sin(index * (Math.PI / 3)) * 120, rotate: [0, 360] }}
-                transition={{ duration: 3, rotate: { duration: 3, repeat: Infinity, ease: "linear" }, delay: index * 0.2 }}
-              >
-                {emoji}
-              </motion.div>
-            ))}
-
-            {/* 중앙 로고 */}
-            <motion.div
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white rounded-full w-28 h-28 flex items-center justify-center shadow-xl"
-              initial={{ scale: 0 }}
-              animate={{ scale: [0, 1.2, 1], rotate: [0, -10, 10, 0] }}
-              transition={{ 
-                scale: { duration: 0.8, times: [0, 0.7, 1] },
-                rotate: { duration: 1.2, times: [0, 0.3, 0.6, 1], delay: 0.8 }
-              }}
-            >
-              <span className="text-3xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">하다</span>
-            </motion.div>
-          </div>
-
-          {/* 로딩 텍스처 */}
-          <div 
-            className="absolute inset-0 mix-blend-overlay opacity-20"
-            style={{
-              backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
-            }}
-          />
-          
-          {/* 로딩 텍스트 */}
-          <motion.div
-            className="relative z-20 text-center mt-36"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-          >
-            <motion.h2 
-              className="text-2xl font-bold text-white mb-2"
-              animate={{ 
-                opacity: [0.7, 1, 0.7],
-              }}
-              transition={{ 
-                duration: 1.5, 
-                repeat: Infinity,
-                repeatType: "mirror" 
-              }}
-            >
-              문화행사 불러오는 중
-            </motion.h2>
-            <motion.div className="flex space-x-1 justify-center">
-              {[0, 1, 2].map((dot) => (
-                <motion.div
-                  key={dot}
-                  className="w-3 h-3 bg-white rounded-full"
-                  initial={{ opacity: 0.5, y: 0 }}
-                  animate={{ opacity: [0.5, 1, 0.5], y: [0, -5, 0] }}
-                  transition={{ duration: 0.6, repeat: Infinity, delay: dot * 0.2 }}
-                />
-              ))}
-            </motion.div>
-            <motion.p 
-              className="text-white/80 text-sm mt-4 max-w-xs mx-auto"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.2 }}
-            >
-              청년들의 열정과 창의력이 담긴<br /> 문화행사를 소개합니다.
-            </motion.p>
-          </motion.div>
-        </div>
-      </AnimatePresence>
-    );
-  }
-
   return (
     <div className="min-h-screen bg-gray-50">
+      
+      {/* 로딩 화면 */}
+      <AnimatePresence>
+        {isLoading && (
+          <motion.div 
+            className="fixed inset-0 z-40 flex flex-col items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 overflow-hidden"
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="flex flex-col items-center justify-center">
+              <div className="relative w-80 h-80 flex items-center justify-center">
+                {/* 회전하는 원형 이벤트 아이콘들 */}
+                {['🎭', '🎨', '🎬', '🎵', '🎉', '🎊'].map((emoji, index) => (
+                  <motion.div
+                    key={index}
+                    className="absolute w-16 h-16 bg-white rounded-full flex items-center justify-center text-2xl shadow-lg"
+                    initial={{ x: 0, y: 0 }}
+                    animate={{ x: Math.cos(index * (Math.PI / 3)) * 120, y: Math.sin(index * (Math.PI / 3)) * 120, rotate: [0, 360] }}
+                    transition={{ duration: 3, rotate: { duration: 3, repeat: Infinity, ease: "linear" }, delay: index * 0.2 }}
+                  >
+                    {emoji}
+                  </motion.div>
+                ))}
+
+                {/* 중앙 로고 */}
+                <motion.div
+                  className="absolute z-10 bg-white rounded-full w-28 h-28 flex items-center justify-center shadow-xl"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: [0, 1.2, 1], rotate: [0, -10, 10, 0] }}
+                  transition={{ 
+                    scale: { duration: 0.8, times: [0, 0.7, 1] },
+                    rotate: { duration: 1.2, times: [0, 0.3, 0.6, 1], delay: 0.8 }
+                  }}
+                >
+                  <span className="text-3xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">하다</span>
+                </motion.div>
+              </div>
+              
+              {/* 로딩 텍스트 */}
+              <motion.div
+                className="relative z-20 text-center mt-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                <motion.h2 
+                  className="text-2xl font-bold text-white mb-2"
+                  animate={{ 
+                    opacity: [0.7, 1, 0.7],
+                  }}
+                  transition={{ 
+                    duration: 1.5, 
+                    repeat: Infinity,
+                    repeatType: "mirror" 
+                  }}
+                >
+                  문화행사 불러오는 중
+                </motion.h2>
+                <motion.div className="flex space-x-1 justify-center">
+                  {[0, 1, 2].map((dot) => (
+                    <motion.div
+                      key={dot}
+                      className="w-3 h-3 bg-white rounded-full"
+                      initial={{ opacity: 0.5, y: 0 }}
+                      animate={{ opacity: [0.5, 1, 0.5], y: [0, -5, 0] }}
+                      transition={{ duration: 0.6, repeat: Infinity, delay: dot * 0.2 }}
+                    />
+                  ))}
+                </motion.div>
+                <motion.p 
+                  className="text-white/80 text-sm mt-4 max-w-xs mx-auto"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1.2 }}
+                >
+                  청년들의 열정과 창의력이 담긴<br /> 문화행사를 소개합니다.
+                </motion.p>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* 히어로 섹션 */}
       <section 
         ref={parallaxRef}
@@ -408,67 +401,66 @@ export default function EventsPage() {
         {/* 콘텐츠 */}
         <div className="container mx-auto px-4 relative z-10 pt-64 sm:pt-56 md:pt-36">
           <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 text-white mb-10 md:mb-0 ml-4 md:ml-8 lg:ml-12">
+            <motion.div 
+              className="md:w-1/2 text-white mb-10 md:mb-0 ml-4 md:ml-8 lg:ml-12"
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: isLoading ? 0 : 1, x: isLoading ? -100 : 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h1 className="text-5xl md:text-8xl font-extrabold leading-tight mb-4">
+                <span className="inline-block transform hover:scale-110 transition-transform duration-300">문</span>
+                <span className="inline-block transform hover:scale-110 transition-transform duration-300 delay-75">화</span>
+                <span className="inline-block transform hover:scale-110 transition-transform duration-300 delay-150">행</span>
+                <span className="inline-block transform hover:scale-110 transition-transform duration-300 delay-225">사</span>
+              </h1>
+              
               <motion.div
-                initial={{ opacity: 0, x: -100 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
+                initial={{ width: 0 }}
+                animate={{ width: isLoading ? 0 : "100%" }}
+                transition={{ duration: 1, delay: 0.5 }}
+                className="h-1 bg-white mb-6"
+              />
+              
+              <motion.h2 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: isLoading ? 0 : 1 }}
+                transition={{ duration: 1, delay: 0.8 }}
+                className="text-xl md:text-3xl font-bold mb-6"
               >
-                <h1 className="text-5xl md:text-8xl font-extrabold leading-tight mb-4">
-                  <span className="inline-block transform hover:scale-110 transition-transform duration-300">문</span>
-                  <span className="inline-block transform hover:scale-110 transition-transform duration-300 delay-75">화</span>
-                  <span className="inline-block transform hover:scale-110 transition-transform duration-300 delay-150">행</span>
-                  <span className="inline-block transform hover:scale-110 transition-transform duration-300 delay-225">사</span>
-                </h1>
-                
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: 1, delay: 0.5 }}
-                  className="h-1 bg-white mb-6"
-                />
-                
-                <motion.h2 
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1, delay: 0.8 }}
-                  className="text-xl md:text-3xl font-bold mb-6"
+                청춘의 열정이 폭발하는 공간
+              </motion.h2>
+              
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: isLoading ? 0 : 1 }}
+                transition={{ duration: 1, delay: 1 }}
+                className="text-base md:text-xl mb-8 max-w-lg"
+              >
+                지루한 일상에서 벗어나 색다른 경험을 찾고 있나요?
+                하다 청년공간에서 펼쳐지는 다양한 문화행사에 참여하고
+                새로운 인연과 영감을 만나보세요.
+              </motion.p>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: isLoading ? 0 : 1, y: isLoading ? 20 : 0 }}
+                transition={{ duration: 0.5, delay: 1.2 }}
+                className="flex flex-wrap gap-4"
+              >
+                <a 
+                  href="#events-anchor" 
+                  onClick={scrollToEvents}
+                  className="px-6 py-3 md:px-8 md:py-4 bg-white text-pink-600 font-bold rounded-full hover:bg-pink-600 hover:text-white transform hover:scale-105 transition-all duration-300 shadow-lg text-sm md:text-base"
                 >
-                  청춘의 열정이 폭발하는 공간
-                </motion.h2>
-                
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1, delay: 1 }}
-                  className="text-base md:text-xl mb-8 max-w-lg"
-                >
-                  지루한 일상에서 벗어나 색다른 경험을 찾고 있나요?
-                  하다 청년공간에서 펼쳐지는 다양한 문화행사에 참여하고
-                  새로운 인연과 영감을 만나보세요.
-                </motion.p>
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 1.2 }}
-                  className="flex flex-wrap gap-4"
-                >
-                  <a 
-                    href="#events-anchor" 
-                    onClick={scrollToEvents}
-                    className="px-6 py-3 md:px-8 md:py-4 bg-white text-pink-600 font-bold rounded-full hover:bg-pink-600 hover:text-white transform hover:scale-105 transition-all duration-300 shadow-lg text-sm md:text-base"
-                  >
-                    행사 둘러보기
-                  </a>
-                </motion.div>
+                  행사 둘러보기
+                </a>
               </motion.div>
-            </div>
+            </motion.div>
             
             <motion.div 
               className="md:w-1/2 mt-6 md:mt-0 w-full px-4 md:px-0"
               initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              animate={{ opacity: isLoading ? 0 : 1, scale: isLoading ? 0.8 : 1, rotate: isLoading ? -5 : 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               <div className="relative w-full">
@@ -532,7 +524,7 @@ export default function EventsPage() {
         <motion.div 
           className="absolute bottom-10 left-0 right-0 flex justify-center z-10"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={{ opacity: isLoading ? 0 : 1 }}
           transition={{ delay: 2, duration: 1 }}
         >
           <motion.div
