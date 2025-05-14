@@ -26,6 +26,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="inline-block md:block">
+                <Link href="/events" className="text-sm md:text-base text-gray-300 hover:text-blue-400 transition-colors px-2 py-1 md:px-0">
+                  문화행사
+                </Link>
+              </li>
+              <li className="inline-block md:block">
                 <Link href="/programs" className="text-sm md:text-base text-gray-300 hover:text-blue-400 transition-colors px-2 py-1 md:px-0">
                   프로그램
                 </Link>
@@ -35,11 +40,7 @@ const Footer = () => {
                   공간대여
                 </Link>
               </li>
-              <li className="inline-block md:block">
-                <Link href="/community" className="text-sm md:text-base text-gray-300 hover:text-blue-400 transition-colors px-2 py-1 md:px-0">
-                  커뮤니티
-                </Link>
-              </li>
+         
             </ul>
           </div>
           
