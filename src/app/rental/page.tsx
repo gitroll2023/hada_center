@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import ImageProtection from '../../components/ImageProtection';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -38,7 +38,7 @@ export default function RentalPage() {
     }, 3000);
     
     return () => clearInterval(interval);
-  }, []);
+  }, [floor3Images.length]);
 
   const spaces = [
     {

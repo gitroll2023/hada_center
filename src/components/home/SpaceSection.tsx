@@ -29,7 +29,7 @@ const SpaceSection = () => {
       
       return () => clearInterval(interval);
     }
-  }, [activeSpace]);
+  }, [activeSpace, floor3Images.length]);
   
   const spaces = [
     {
