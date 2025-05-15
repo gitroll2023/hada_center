@@ -1,14 +1,35 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 
 const SpaceSection = () => {
   const [activeSpace, setActiveSpace] = useState(0);
+  const [current3FImage, setCurrent3FImage] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
+  
+  // 3층 이미지 배열
+  const floor3Images = [
+    "/images/space/3F_1.jpg",
+    "/images/space/3F_2.jpg",
+    "/images/space/3F_3.jpg",
+    "/images/space/3F_4.jpg",
+    "/images/space/3F_5.jpg"
+  ];
+  
+  // 3초마다 3층 이미지 변경
+  useEffect(() => {
+    if (activeSpace === 1) { // 3층이 선택되었을 때만 이미지 변경
+      const interval = setInterval(() => {
+        setCurrent3FImage((prev) => (prev + 1) % floor3Images.length);
+      }, 3000);
+      
+      return () => clearInterval(interval);
+    }
+  }, [activeSpace]);
   
   const spaces = [
     {
@@ -23,7 +44,7 @@ const SpaceSection = () => {
       id: 2,
       title: "3층",
       description: "소규모 모임과 네트워킹이 이루어지는 아늑한 공간입니다. 다양한 청년들과 교류할 수 있습니다.",
-      image: "/images/space/2F.png", // 이미지 경로는 실제 3층 이미지로 변경 필요
+      image: floor3Images[current3FImage], // 현재 선택된 3층 이미지
       color: "from-purple-400 to-purple-600",
       icon: "👥"
     }
@@ -108,6 +129,18 @@ const SpaceSection = () => {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />
+                
+                {/* 3층 이미지 인디케이터 (3층이 선택되었을 때만 표시) */}
+                {activeSpace === 1 && (
+                  <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10">
+                    {floor3Images.map((_, index) => (
+                      <div 
+                        key={index} 
+                        className={`w-2 h-2 rounded-full transition-all ${current3FImage === index ? 'bg-white scale-125' : 'bg-white/50'}`}
+                      />
+                    ))}
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-black/40 to-transparent"></div>
                 
                 {/* 모바일에서만 보이는 제목 */}

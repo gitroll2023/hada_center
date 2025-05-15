@@ -238,7 +238,7 @@ export default function AboutPage() {
                   transition={{ duration: 0.8, delay: 0.7 }}
                 >
                   <Image
-                    src="/images/space/2F.png"
+                    src="/images/space/3F_2.jpg"
                     alt="하다 청년공간"
                     fill
                     className="object-cover"
@@ -312,7 +312,7 @@ export default function AboutPage() {
             >
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-yellow-100 rounded-full -z-10"></div>
               <Image
-                src="/images/space/2F.png"
+                src="/images/space/3F_3.jpg"
                 alt="하다 청년공간"
                 width={600}
                 height={400}

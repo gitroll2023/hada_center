@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import ImageProtection from '../../components/ImageProtection';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -8,6 +8,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function RentalPage() {
   // 로딩 상태
   const [isLoading, setIsLoading] = useState(true);
+  // 3층 이미지 인덱스
+  const [current3FImage, setCurrent3FImage] = useState(0);
+  
+  // 3층 이미지 배열
+  const floor3Images = [
+    "/images/space/3F_1.jpg",
+    "/images/space/3F_2.jpg",
+    "/images/space/3F_3.jpg",
+    "/images/space/3F_4.jpg",
+    "/images/space/3F_5.jpg"
+  ];
 
   // 로딩 효과
   useEffect(() => {
@@ -19,6 +30,15 @@ export default function RentalPage() {
 
     return () => clearTimeout(timer);
   }, []);
+  
+  // 3초마다 3층 이미지 변경
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent3FImage((prev) => (prev + 1) % floor3Images.length);
+    }, 3000);
+    
+    return () => clearInterval(interval);
+  }, []);
 
   const spaces = [
     {
@@ -27,6 +47,13 @@ export default function RentalPage() {
       features: ['무료 와이파이', '음료 제공', '노트북 작업 공간'],
       image: '/images/space/2F.png',
       description: '다양한 모임과 네트워킹이 이루어지는 열린 공간입니다. 소규모 모임, 스터디, 네트워킹 등을 위한 테이블과 의자가 구비되어 있습니다.'
+    },
+    {
+      id: 2,
+      name: '3층 소통 공간',
+      features: ['아늑한 분위기', '소규모 모임 적합', '네트워킹 공간'],
+      image: floor3Images[current3FImage],
+      description: '소규모 모임과 네트워킹이 이루어지는 아늑한 공간입니다. 다양한 청년들과 교류할 수 있는 편안한 분위기의 공간으로 구성되어 있습니다.'
     }
   ];
 
@@ -309,6 +336,18 @@ export default function RentalPage() {
                     className="object-cover"
                     unoptimized={false}
                   />
+                  
+                  {/* 3층 이미지 인디케이터 (3층 공간일 때만 표시) */}
+                  {space.id === 2 && (
+                    <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10">
+                      {floor3Images.map((_, index) => (
+                        <div 
+                          key={index} 
+                          className={`w-2 h-2 rounded-full transition-all ${current3FImage === index ? 'bg-white scale-125' : 'bg-white/50'}`}
+                        />
+                      ))}
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 p-6">
                     <h3 className="text-3xl font-bold text-white mb-2">{space.name}</h3>
